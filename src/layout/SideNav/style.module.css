@@ -1,0 +1,10 @@
+.sideNavNoActive{
+    background-color: red;
+    width: 5%;
+    height: 100%;
+}
+.sideNavActive{
+    background-color: aqua;
+    width: 20%;
+    height: 100%;
+}
