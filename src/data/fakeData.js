@@ -1,109 +1,94 @@
+// ** פעילויות **
 export const actions = [
    {
-      orders: null,
-      funding: null,
+      _id: "null",
+      orderSource: null,
+      fundingSource: null,
       location: null,
       locationType: null,
-      studyDays: [1, 2, 3, 4, 5, 6, 7],
+      days: [1, 3, 5],
       startTime: null,
       endTime: null,
       startDate: null,
       endDate: null,
       status: null,
       lecturer: null,
-      _id: null,
-      type: null,
       actionType: 'workshop',
       name: 'full stack',
       files: [
          {
-            fileName: "a",
-            fileType: '.txt',
-            size: "24kb",
-            createdDate: "12/04/2023"
+            fileName: "syllabus-fs",
+            fileType: 'txt',
+            size: "2433",
+            createdDate: new Date("12/04/2023")
          },
          {
-            fileName: "images",
-            fileType: 'directory',
-            size: "20mb",
-            createdDate: "11/06/2023"
-         },
-         {
-            fileName: "b",
-            fileType: '.txt',
-            size: "24kb",
-            createdDate: "12/04/2023"
-         },
-         {
-            fileName: "index",
-            fileType: 'js',
-            size: "24kb",
-            createdDate: "12/04/2023"
+            fileName: "images01",
+            fileType: 'jpg',
+            size: "202131",
+            createdDate: new Date("11/06/2023")
          }
       ],
-      missions: [
+      tasks: [
          {
-            dedLine: null,
-            detail: null,
-            status: null,
+            dealine: new Date("22/07/2023"),
+            details: "task 1",
+            isDone: false,
          },
          {
-            dedLine: null,
-            detail: null,
-            status: null,
+            dealine: new Date("23/07/2023"),
+            details: "task 2",
+            isDone: true,
          },
          {
-            dedLine: null,
-            detail: null,
-            status: null,
+            dealine: new Date("27/07/2023"),
+            details: "task 3",
+            isDone: false,
          },
-         {
-            dedLine: null,
-            detail: null,
-            status: null,
-         },
-         {
-            dedLine: null,
-            detail: null,
-            status: null,
-         }
       ],
-      users: ["123456", "123123123"],
-      schedule: [
+      users: ["123", "456"],
+      schedules: [
          {
             date: "18/08/2023",
             lecturer: "Aviad",
             comments: "to do users name",
             status: "active"
-
          }
       ]
    },
 
 ]
 
-
+// ** משתמשים / סטודנטים **
 export const users = [
    {
       _id: "0",
-      userId:"123456",
+      userId: "123", 
       fName: 'Avi',
       lName: "Sason",
-      phone: 0,
-      email: null,
-      participantNum: 0,
-      comments: null
+      phone: "0505477654",
+      email: "avi@gmail.com",
+      participantNum: 324,
+      comments: null,
+      permission : "student"
    },
    {
       _id: "1",
-      userId:"123123123",
-      fName: 'Avi',
-      lName: "Sason",
-      phone: 0,
-      email: null,
-      participantNum: 0,
-      comments: null
+      userId: "456",
+      fName: 'Ben',
+      lName: "Cohen",
+      phone: "0505117614",
+      email: "ben@gmail.com",
+      participantNum: 345,
+      comments: null,
+      permission : "student"
    }
 ]
 
 
+// TODO : 
+// - settings 
+// ---- object of  actionType  { color, nameHebrew , _id}
+// ---- days - number to day (hebrew) {1 : "'א"}
+// ---- orderSource = ["",""]
+// ---- fundingSource = ["",""]
