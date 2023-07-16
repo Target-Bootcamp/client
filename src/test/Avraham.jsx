@@ -7,7 +7,7 @@ export default function Avraham() {
       {/* true */}
       {/* false */}
          <MainLayout active={false}
-          contentChilden={<div>content</div>}
+          contentChilden={<div>sagy</div>}
           navChilden={<div>nav</div>}/>
       </>
    )
