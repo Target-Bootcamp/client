@@ -96,7 +96,7 @@ export const users = [
    }
 ]
 
-export const settings = { actionType: { workshop: { colors: "" }, course: "" } }
+// export const settings = { actionType: { workshop: { colors: "" }, course: "" } }
 
 
 // TODO :
