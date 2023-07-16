@@ -5,7 +5,8 @@
     width: 80%;
 }
 .content{
-    background-color: #FEFEFE;
+    background-color: var(--covered);
+    /* background: var(--silver2); */
     height: 100%;
     position: absolute;
     left: 0;
