@@ -6,7 +6,12 @@
    --font: 'Assistant', sans-serif;
    --primary:#76C6D1;
    --secondary:#FEC130;
-   --silver :#BEBEBE;
+   --silver :#BEBEBE ;
+   --coverd : #FEFEFE;
+   --silver2 : linear-gradient(180deg, rgba(217, 217, 217, 0.4) 0%, rgba(254, 254, 254, 0) 88.99%);
+   /* how use silver2: background: var(--silver2)  */
+   /* how not use silver2: background-color: var(--silver2) */
+
 }
 *{
    margin: 0;

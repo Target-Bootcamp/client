@@ -7,8 +7,7 @@ import Files from '../../pages/Files';
 import Schedule from '../../pages/Schedule';
 import Tasks from '../../pages/Tasks';
 import Students from '../../pages/Students';
-const  Content = ({style={}}) => {
-  const [active, setActive] = useState(true);
+const  Content = ({active,style={}}) => {
   return (
     <div className={`center ${styles.content} ${active?styles.contentActive:styles.contentNoActive}`} style={style}>
       <Routes>

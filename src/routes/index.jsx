@@ -11,7 +11,7 @@ export default function MainRouter() {
    },[])
 
    const getUser = ()=>{
-      setUser(true)
+      setUser(false)
       // axios.get(`blablabla/users/ ${localStorage.token}`)
       // .then(response=>setUser(response))
       // .catch(error=>{

@@ -4,12 +4,12 @@ import SideNav from '../SideNav';
 import Content from '../Content';
 
 const MainLayout = () => {    
-    
-
+    const [active, setActive] = useState(true);
+// false
     return (
         <div className={`center ${styles.hiro}`}>
-            <SideNav/>
-            <Content/> 
+            <SideNav active={active}/>
+            <Content active={active}/> 
         </div>
     );
 }

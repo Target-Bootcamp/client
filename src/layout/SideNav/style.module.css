@@ -5,7 +5,7 @@
     width: 25%;
 }
 .sideNav{
-    background-color: #76C6D1;
+    background-color: var(--primary);
     height: 100%;
     position: absolute;
     right: 0;
