@@ -13,6 +13,7 @@ import Elad from './Elad'
 import Amram from './Amram'
 import Itamar from './Itamar'
 import Inon from './Inon'
+import Yosef from './Yosef'
 
 export default function MainTest() {
    return (
@@ -31,6 +32,7 @@ export default function MainTest() {
          <Route path='/amram' element={<Amram />} />
          <Route path='/itamar' element={<Itamar />} />
          <Route path='/inon' element={<Inon />} />
+         <Route path='/yosef' element={<Yosef />} />
       </Routes>
    )
 }
