@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './style.module.css' 
-const  Content = ({style={},activity}) => {
+const  Content = ({children,style={},activity}) => {
   return (
-    <div className={`center ${activity?styles.contentActive:styles.contentNoActive}`} style={style}>
-      content
+    <div className={`center ${styles.content} ${activity?styles.contentActive:styles.contentNoActive}`} style={style}>
+      {children}
     </div>
   );
 }
