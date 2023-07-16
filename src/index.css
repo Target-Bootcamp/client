@@ -1,8 +1,16 @@
 /* TODO- fonts */
 /* TODO- colors */
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
 
+:root{
+   --font: 'Assistant', sans-serif;
+   --primary:#76C6D1;
+   --secondary:#FEC130;
+   --silver :#BEBEBE;
+}
 *{
    margin: 0;
    padding: 0;
    box-sizing: border-box;
+   font-family: var(--font);
 }
