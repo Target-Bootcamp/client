@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { createContext } from "react"
-import fakeData from './data/fakeData'
+import fakeData from '../data/fakeData'
 
 export const DataContext = createContext({})
 
@@ -8,7 +8,7 @@ export const DataContext = createContext({})
 export default function MainContext({ children }) {
 
    const settingsObj = {
-      actionType: fakeData.actionsTypes,
+      actionType: fakeData.actionTypes,
       days: fakeData.days,
       fundingSource: fakeData.fundingSource,
       orderSource: fakeData.orderSource

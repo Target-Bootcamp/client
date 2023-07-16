@@ -207,6 +207,8 @@ export const orderSource = ["עריית בני ברק", "מועצה אזורית
 
 export const fundingSource = ["משרד הכלכלה", `מגע"ר`]
 
+export default ({ actions, users, actionTypes, days, orderSource, fundingSource })
+
 
 
 // TODO :
