@@ -164,18 +164,31 @@ export const users = [
    }
 ]
 
-export const actionTypes = [{
-   _id: "111qqq",
-   actionType: "workshop",
-   nameHebrew: "סדנה",
-   color: ""
-},
-{
-   _id: "222qqq",
-   actionType: "course",
-   nameHebrew: "קורס",
-   color: "",
-}
+export const actionTypes = [
+   {
+      _id: "111qqq",
+      actionType: "workshop",
+      nameHebrew: "סדנה",
+      colors: {
+         primary: "#76C6D1",
+         secondary: "#FEC130",
+         silver: "#BEBEBE"
+      },
+      font: "Assistant , sans-serif"
+   }
+   ,
+
+   {
+      _id: "222qqq",
+      actionType: "course",
+      nameHebrew: "קורס",
+      colors: {
+         primary: "#76C6D1",
+         secondary: "#FEC130",
+         silver: "#BEBEBE"
+      },
+      font: "Assistant , sans-serif"
+   }
 ]
 
 export const days =
@@ -197,11 +210,7 @@ export const fundingSource = ["משרד הכלכלה", `מגע"ר`]
 
 
 // TODO :
-
 // ---- days - number to day (hebrew) {1 : "'א"}
-
-
-
 // ---- object of  actionType  { color, nameHebrew , _id}
 // - settings
 // ---- orderSource = ["",""]
