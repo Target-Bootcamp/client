@@ -63,14 +63,14 @@ export const actions = [
 export const users = [
    {
       _id: "0",
-      userId: "123", 
+      userId: "123",
       fName: 'Avi',
       lName: "Sason",
       phone: "0505477654",
       email: "avi@gmail.com",
       participantNum: 324,
       comments: null,
-      permission : "student"
+      permission: "student"
    },
    {
       _id: "1",
@@ -81,13 +81,26 @@ export const users = [
       email: "ben@gmail.com",
       participantNum: 345,
       comments: null,
-      permission : "student"
+      permission: "student",
+   }
+   , {
+      _id: "2",
+      userId: "789",
+      fName: 'sagi',
+      lName: "buta",
+      phone: "0547658620",
+      email: "sagi@gmail.com",
+      participantNum: 111,
+      comments: null,
+      permission: "admin",
    }
 ]
 
+export const settings = { actionType: { workshop: { colors: "" }, course: "" } }
 
-// TODO : 
-// - settings 
+
+// TODO :
+// - settings
 // ---- object of  actionType  { color, nameHebrew , _id}
 // ---- days - number to day (hebrew) {1 : "'א"}
 // ---- orderSource = ["",""]
