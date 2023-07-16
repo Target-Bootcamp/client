@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Tzvi() {
+export default function Zvi() {
    return (
       <div>Tzvi</div>
    )
