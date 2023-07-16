@@ -7,6 +7,8 @@
    --primary:#76C6D1;
    --secondary:#FEC130;
    --silver :#BEBEBE;
+   --err: 3px solid red;
+   --radius:15px;
 }
 *{
    margin: 0;
