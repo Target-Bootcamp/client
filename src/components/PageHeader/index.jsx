@@ -1,15 +1,16 @@
 import styles from './style.module.css'
-import DataContext from '../../context'
+import {DataContext} from '../../context'
 import { useContext } from 'react'
-// props : 
-// creator:
-function PageHeader({ pageName, activityName, style = {}, ...props }) {
-const context =useContext(DataContext)
+// props : pageName ,actionType
+// creator:zvi miler
+function PageHeader({ pageName,actionType, style = {}, ...props }) {
+const Data =useContext(DataContext)
+const action= Data.settings.actionType.find(v=>v.actionType===actionType);
     return (
-        <div className={`canter ${styles.header}`} style={style} {...props}>
+        <div className={styles.header} style={style} {...props}>
 
-           <h3> {pageName}</h3>
-           <h4> {activityName}</h4>
+           <h3 className={styles.pageName}> {pageName}</h3>
+           <h4 className={styles.actionType} style={{font:action.font, color:action.colors.secondary}}> {action. nameHebrew}</h4>
         </div>
     )
 }
