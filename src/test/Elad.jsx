@@ -14,15 +14,17 @@ export default function Elad() {
       let lname = event.target.lname.value
       let age = event.target.age.value
 
-      console.log(fname,lname,age);
+      console.log(fname, lname, age);
    };
    return (
-      <form onSubmit={handleSubmit}>
-         <InputText onChange={handleInputChange} name ="fname" placeholder="fname"/>
-         <InputText onChange={handleInputChange} name="lname" placeholder="lname"/>
-         <InputText onChange={handleInputChange} name="age" placeholder="age"/>
+      <div style={{overflowY:'scroll', height: "100%",}}>
+         <form onSubmit={handleSubmit}>
+            <InputText onChange={handleInputChange} name="fname" placeholder="fname" />
+            <InputText onChange={handleInputChange} name="lname" placeholder="lname" />
+            <InputText onChange={handleInputChange} name="age" placeholder="age" />
 
-         <button type="submit">Submit</button>
-      </form>
+            <button type="submit">Submit</button>
+         </form>
+      </div>
    )
 }
