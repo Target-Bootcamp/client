@@ -1,27 +1,26 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { DataContext } from '../../context'
-import Styles from './style.module.css'
+import styles from './style.module.css'
 
 export default function Popup() {
+
     const context = useContext(DataContext)
-    const upPopup = useEffect()
-    console.log(context);
+    // const upPopup = useEffect()
 
-
+    function exit() {
+        context.setPopUp(null)
+    }
 
     return (
         <>
-            <div className={Styles.backpopup}>
-                <div className={Styles.popap}>
-                    <div className={Styles.popheader}>
-                        <button>❌</button>
-                    </div>
-                    <input type="text" />
-                    <input type="text" />
-                    <input type="text" />
-                    <input type="text" />
-                    <button>save</button>
+            <div className={styles.backpopup} >
 
+                <div className={styles.popup}>
+
+                    <div className={styles.popheader}>
+                        <button onClick={exit}>❌</button>
+                    </div>
+                    {context.popUp}
                 </div>
 
             </div>

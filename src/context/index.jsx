@@ -17,10 +17,11 @@ export default function MainContext({ children }) {
    const [actions, setAction] = useState(fakeData.actions)
    const [users, setUsers] = useState(fakeData.users)
    const [settings, setSetings] = useState(settingsObj)
+   const [popUp, setPopUp] = useState()
 
 
    return (
-      <DataContext.Provider value={{ actions, setAction, users, setUsers, settings, setSetings }} >
+      <DataContext.Provider value={{ actions, setAction, users, setUsers, settings, setSetings, popUp, setPopUp }} >
          <>{children}</>
       </DataContext.Provider>
    )
