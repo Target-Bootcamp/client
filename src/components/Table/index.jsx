@@ -1,44 +1,28 @@
 import { useState } from "react"
-import data from './data.json'
+
 import styles from './style.module.css'
 // import { icons } from "react-icons"
+import { BsTrash, BsFillPencilFill } from "react-icons/Bs";
+// import { FaPencil } from "react-icons/Fa";
 
 
 
+export default function Table(props) {
+   let obj = props.arr ?? Object.keys(props.data[0])
+   function tempFunck(objeckt) {
+      return <tr> {obj.map(key => {
+         return <td>{objeckt[key]}</td>
+      })}  {props.deletion ? <td><button onClick={() => props.deletion(objeckt)}><BsTrash /></button></td> : null}
+         {props.editing ? <td><button onClick={() => props.editing(objeckt)}><BsFillPencilFill /></button></td> : null}
 
- export default function Table({deleteFn, list, }) {
- const [dataJson,setDataJson] = useState(data)
- //props.data
-//  let funk = [props.deletion,props,editing]
-    let obj = Object.keys(dataJson[0])
-
-    function tempFunck (objeckt) {
-      const obj = Object.keys(objeckt)
-      // console.log(obj);
-      let value = []
-      for (let i =0; i < obj.length ; i++){
-         const name  = obj[i];
-          value.push(objeckt[name]);
-        }
-      return <tr> {value.map(val=>{
-         // if (props.deletion){
-         //     return (<><td><button onClick={()=>props.deletion(val)}>❌</button></td></>}
-         //      if(props.deletion) {return<> <td><button onClick={()=>props.editing(val)}>editing</button>
-         //</td> 
-         //       </>)}
-      
-
-         
-          return <td>{val}</td>})}
-           </tr>
-          }
-
-return( <table>{ obj.map(val => <th>{val}</th>)}
-   
-
-  { dataJson.map( ( value ) => tempFunck  (value)
-  )}
+      </tr>
+   }
+   return (<table>{obj.map(val => <th>{val}</th>)}
 
 
-</table>)
+      {props.data.map((value) => tempFunck(value)
+      )}
+
+
+   </table>)
 }
