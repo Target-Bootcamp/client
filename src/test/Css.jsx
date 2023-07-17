@@ -2,7 +2,6 @@ import React from 'react'
 
 export default function Css() {
    return (
-      // <div>Yonatan</div>
       <div className='scroller'>Yonatan
          <h1 >yonatan</h1>
          <h2 >yonatan</h2>
