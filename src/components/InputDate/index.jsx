@@ -1,35 +1,42 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./style.module.css";
 
-function InputDate({ style = {}, ...props }) {
-  const today = new Date().toISOString().substr(0, 10);
+function InputDate({ style = {}, startDate, endDate, setStartDate, setEndDate, ...props }) {
+  const today = new Date();
+  const todayFormatted = today.toISOString().substr(0, 10);
 
-  const nextDay = new Date();
-  nextDay.setDate(nextDay.getDate() + 1);
-  const formattedNextDay = nextDay.toISOString().substr(0, 10);
+  const localStartDate = startDate || todayFormatted;
+  const localEndDate = endDate || todayFormatted;
 
-  const [startDate, setStartDate] = useState(today);
-  const [endDate, setEndDate] = useState(formattedNextDay);
+  const lastYear = new Date();
+  lastYear.setFullYear(today.getFullYear() - 1);
+  const lastYearFormatted = lastYear.toISOString().substr(0, 10);
 
   return (
-    <div className={styles.name} style={style} {...props}>
-      <div className={styles.start}>
+    <div className={styles.wrapper} style={style} {...props}>
+      <div className={styles.dateBox}>
         <label className={styles.text}>תאריך התחלה</label>
         <input
           type="date"
           name="start-date"
-          value={startDate}
-          min={today}
-          onChange={(e) => setStartDate(e.target.value)}
+          value={localStartDate}
+          min={lastYearFormatted}
+
+          onChange={(e) => {
+            setStartDate(e.target.value);
+            if (localEndDate && new Date(e.target.value) > new Date(localEndDate)) {
+              setEndDate(e.target.value);
+            }
+          }}
         />
       </div>
-      <div className={styles.end}>
+      <div className={styles.dateBox}>
         <label className={styles.text}>תאריך סיום</label>
         <input
           type="date"
           name="end-date"
-          min={formattedNextDay}
-          value={endDate}
+          min={localStartDate}
+          value={localEndDate}
           onChange={(e) => setEndDate(e.target.value)}
         />
       </div>
@@ -38,6 +45,8 @@ function InputDate({ style = {}, ...props }) {
 }
 
 export default InputDate;
+
+
 
 
 
