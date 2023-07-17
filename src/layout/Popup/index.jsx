@@ -13,12 +13,12 @@ export default function Popup() {
 
     return (
         <>
-            <div className={styles.backpopup} >
+            <div onClick={exit} className={styles.backpopup} >
 
                 <div className={styles.popup}>
 
                     <div className={styles.popheader}>
-                        <button onClick={exit}>❌</button>
+                        <div onClick={exit}>❌</div>
                     </div>
                     {context.popUp}
                 </div>
