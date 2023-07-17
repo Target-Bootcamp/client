@@ -13,6 +13,8 @@ import Elad from './Elad'
 import Amram from './Amram'
 import Itamar from './Itamar'
 import Inon from './Inon'
+import Yosef from './Yosef'
+import Css from './Css'
 
 export default function MainTest() {
    return (
@@ -23,6 +25,7 @@ export default function MainTest() {
          <Route path='/moyshi' element={<Moyshi />} />
          <Route path='/eli' element={<Eli />} />
          <Route path='/yonatan' element={<Yonatan />} />
+         <Route path='/css' element={<Css />} />
          <Route path='/avraham' element={<Avraham />} />
          <Route path='/sagi' element={<Sagi />} />
          <Route path='/efraim' element={<Efraim />} />
@@ -31,6 +34,7 @@ export default function MainTest() {
          <Route path='/amram' element={<Amram />} />
          <Route path='/itamar' element={<Itamar />} />
          <Route path='/inon' element={<Inon />} />
+         <Route path='/yosef' element={<Yosef />} />
       </Routes>
    )
 }
