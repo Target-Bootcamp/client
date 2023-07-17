@@ -1,0 +1,45 @@
+.Search {
+  height: 60px;
+  width: 200px;
+    margin: 5px; 
+    gap: 2px;
+    position: relative;
+    
+}
+.container{
+       position: relative;
+}
+.Btn {
+    z-index: 10;
+    position: absolute;
+    right: 0;
+}
+
+.Btn button {
+    gap: 5%;
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+    border: white;
+    padding: 15px;
+    margin-top: 5px;
+    background-color: white;
+    
+    box-shadow: 16px 21px 42px 13px rgba(0,0,0,0.1);
+    outline: white;
+}
+.Search > input{
+    gap: 5%;
+    height: 50px;
+    width: 100%;
+    border-radius: 30px;
+    border: white;
+    padding: 15px;
+    margin-top: 5px;
+    background-color: white;
+    
+    box-shadow: 16px 21px 42px 13px rgba(0,0,0,0.1);
+    outline: white;
+    
+    /* position: absolute; */
+}
