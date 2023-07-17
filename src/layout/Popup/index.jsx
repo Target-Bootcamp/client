@@ -5,7 +5,6 @@ import styles from './style.module.css'
 export default function Popup() {
 
     const context = useContext(DataContext)
-    // const upPopup = useEffect()
 
     function exit() {
         context.setPopUp(null)
@@ -20,7 +19,9 @@ export default function Popup() {
                     <div className={styles.popheader}>
                         <div onClick={exit}>❌</div>
                     </div>
+
                     {context.popUp}
+
                 </div>
 
             </div>
