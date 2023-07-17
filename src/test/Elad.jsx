@@ -17,7 +17,6 @@ export default function Elad() {
       console.log(fname, lname, age);
    };
    return (
-      <div style={{overflowY:'scroll', height: "100%",}}>
          <form onSubmit={handleSubmit}>
             <InputText onChange={handleInputChange} name="fname" placeholder="fname" />
             <InputText onChange={handleInputChange} name="lname" placeholder="lname" />
@@ -25,6 +24,5 @@ export default function Elad() {
 
             <button type="submit">Submit</button>
          </form>
-      </div>
    )
 }
