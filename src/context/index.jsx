@@ -21,7 +21,6 @@ export default function MainContext({ children }) {
 
    return (
       <DataContext.Provider value={{ actions, setAction, users, setUsers, settings, setSetings }} >
-         {/* // <DataContext.Provider value={{ actions:[actions, setAction], [users, setUsers], [settingData, setSetingData] }} > */}
          <>{children}</>
       </DataContext.Provider>
    )
