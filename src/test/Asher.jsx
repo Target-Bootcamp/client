@@ -1,7 +1,8 @@
 import React from 'react'
+import Table from '../components/Table/index'
 
 export default function Asher() {
    return (
-      <div>Asher</div>
+      <div><Table/></div>
    )
 }
