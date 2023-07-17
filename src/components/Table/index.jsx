@@ -5,23 +5,21 @@ export default function Table(props) {
    let obj = props.arr ?? Object.keys(props.data[0])
 
    function tempFunck(objeckt) {
-      return <tr> {obj.map(key => {
+      return <tr > {obj.map(key => {
          return <>
-            {key === "isDone" ? <td>{<input type="checkbox" className='check' checked={objeckt[key]} />}</td> : <td>{objeckt[key]}</td>}</>
+            {key === "isDone" ? <td>{<input type="checkbox" className={styles.name} checked={objeckt[key]} />}
+            </td> : <td>{objeckt[key]}</td>}</>
 
-      })}  {props.deletion ? <td><button onClick={() => props.deletion(objeckt)}><BsTrash className="icons" /></button></td> : null}
-         {props.editing ? <td><button onClick={() => props.editing(objeckt)}><BsFillPencilFill className="icons" /></button></td> : null}
-
+      })}  {props.deletion ? <td><button onClick={() => props.deletion(objeckt)}>
+         <BsTrash className={styles.icons} /></button></td> : null}
+         {props.editing ? <td><button onClick={() => props.editing(objeckt)}>
+            <BsFillPencilFill className={styles.icons} /></button></td> : null}
       </tr>
    }
 
    return (
-      <table className='tw'>{obj.map(val => <th>{val}</th>)}
-
-
+      <table className={styles.tw}>{obj.map(val => <th>{val}</th>)}
          {props.data.map((value) => tempFunck(value)
          )}
-
-
       </table>)
 }
