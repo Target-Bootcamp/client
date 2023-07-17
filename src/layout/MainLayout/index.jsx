@@ -3,15 +3,13 @@ import styles from './style.module.css'
 import SideNav from '../SideNav';
 import Content from '../Content';
 
-const MainLayout = ({active,navChilden,contentChilden}) => {    
+const MainLayout = () => {    
+    const [active, setActive] = useState(true);
+// false
     return (
         <div className={`center ${styles.hiro}`}>
-            <SideNav  activity={active}>
-                {navChilden}
-            </SideNav>
-            <Content activity={active}>
-                {contentChilden}
-            </Content>
+            <SideNav active={active}/>
+            <Content active={active}/> 
         </div>
     );
 }
