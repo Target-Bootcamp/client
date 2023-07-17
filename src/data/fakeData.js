@@ -162,6 +162,7 @@ export const users = [
       comments: null,
       permission: "admin",
    }
+
 ]
 
 export const actionTypes = [
