@@ -1,6 +1,4 @@
-import React from 'react'
-import Table from '../components/Table/index'
-import data from './data.json'
+import Table from '../components/Table'
 
 export default function Asher() {
    let arr = ["name","email"]
@@ -9,6 +7,6 @@ export default function Asher() {
    }
 
    return (
-      <div><Table data={data} deletion={del} editing={del} arr ={arr} /></div>
+      <div><Table data={[{name:"a",email:"b"},{name:"a",email:"b"}]} deletion={del} editing={del} arr ={arr} /></div>
    )
 }

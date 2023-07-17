@@ -1,14 +1,9 @@
-import { useState } from "react"
-
-import styles from './style.module.css'
-// import { icons } from "react-icons"
+// import styles from './style.module.css'
 import { BsTrash, BsFillPencilFill } from "react-icons/Bs";
-// import { FaPencil } from "react-icons/Fa";
-
-
 
 export default function Table(props) {
    let obj = props.arr ?? Object.keys(props.data[0])
+ 
    function tempFunck(objeckt) {
       return <tr> {obj.map(key => {
          return <td>{objeckt[key]}</td>
@@ -17,6 +12,7 @@ export default function Table(props) {
 
       </tr>
    }
+   
    return (<table>{obj.map(val => <th>{val}</th>)}
 
 
