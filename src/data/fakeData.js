@@ -1,6 +1,6 @@
 // ** פעילויות **
 export const actions = [
-   {
+   { 
       _id: "null",
       orderSource: "עריית בני ברק",
       fundingSource: "משרד הכלכלה",
