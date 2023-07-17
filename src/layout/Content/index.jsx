@@ -10,7 +10,7 @@ import Students from '../../pages/Students';
 import MainTest from '../../test';
 const Content = ({ active, style = {} }) => {
   return (
-    <div className={`center ${styles.content} ${active ? styles.contentActive : styles.contentNoActive}`} style={style}>
+    <div className={` ${styles.content} ${active ? styles.contentActive : styles.contentNoActive}`} style={style}>
       <MainTest />
 
       <Routes>
