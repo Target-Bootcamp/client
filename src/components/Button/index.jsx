@@ -1,6 +1,6 @@
 import React from 'react'
 
-// props : butname
+// props : butoonName , type , onClick , className
 // creator: elad nizrchi
 
 export default function Button({ butoonName , type , onClick , className}) {

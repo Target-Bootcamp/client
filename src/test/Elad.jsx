@@ -26,6 +26,6 @@ export default function Elad({butoonName}) {
       //    <button type="submit">Submit</button>
 
       // </form>
-         <Button butoonName={"miz"} onClick={()=> console.log("good")}/>
+         <Button className="w154" butoonName={"תלמידים"} onClick={()=> console.log("good")}/>
    )
 }
