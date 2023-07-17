@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import Aviad from './Aviad'
 import Shay from './Shay'
-import Zvi from './Zvi'
+import Tzvi from './Zvi'
 import Moyshi from './Moyshi'
 import Eli from './Eli'
 import Yonatan from './Yonatan'
@@ -13,14 +13,13 @@ import Elad from './Elad'
 import Amram from './Amram'
 import Itamar from './Itamar'
 import Inon from './Inon'
-import Yosef from './Yosef'
 
 export default function MainTest() {
    return (
       <Routes>
          <Route path='/aviad' element={<Aviad />} />
          <Route path='/shay' element={<Shay />} />
-         <Route path='/zvi' element={<Zvi />} />
+         <Route path='/tzvi' element={<Tzvi />} />
          <Route path='/moyshi' element={<Moyshi />} />
          <Route path='/eli' element={<Eli />} />
          <Route path='/yonatan' element={<Yonatan />} />
@@ -32,7 +31,6 @@ export default function MainTest() {
          <Route path='/amram' element={<Amram />} />
          <Route path='/itamar' element={<Itamar />} />
          <Route path='/inon' element={<Inon />} />
-         <Route path='/yosef' element={<Yosef />} />
       </Routes>
    )
 }
