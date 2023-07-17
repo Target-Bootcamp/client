@@ -1,16 +1,20 @@
-
 table {
   font-family: arial, sans-serif;
   border-collapse:collapse ;
-  width: 80%;
+  
 }
 
 td, th {
   border: 2px solid #dddddd;
   text-align: center;
-  padding: 5px;
+  padding: 6px;
 }
 
-/* tr:nth-child(even) {
+tr:nth-child(even) {
   background-color: #dddddd;
-} */
+}
+.check{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
