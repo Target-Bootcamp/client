@@ -4,7 +4,8 @@ import { BsTrash, BsFillPencilFill } from "react-icons/Bs";
 
 //props: An array of objects,Delete function
 //Editing function,
-//Whatever you want to be displayed to the provider as an array of course
+//Whatever you want to be displayed to the provider as an array of course,
+//Task marking function
 
 export default function Table(props) {
    let obj = props.arr ?? Object.keys(props.data[0])
@@ -12,8 +13,12 @@ export default function Table(props) {
    function tempFunck(objeckt) {
       return <tr > {obj.map(key => {
          return <>
-            {key === "isDone" ? <td>{<input type="checkbox" className={styles.check}
-               checked={objeckt[key]} />}
+            {key === "isDone" ? <td >
+               {
+
+                  <button className={objeckt[key] ? styles.button : styles.checknun}
+                   onClick={() => props.TaskMarking(objeckt)}> </button>
+               }
             </td> : <td>{objeckt[key]}</td>}</>
 
       })}  {props.deletion ? <td><button onClick={() => props.deletion(objeckt)}>
