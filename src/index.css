@@ -1,8 +1,39 @@
 /* TODO- fonts */
 /* TODO- colors */
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap');
 
+:root{
+   --font: 'Assistant', sans-serif;
+   --primary:#76C6D1;
+   --secondary:#FEC130;
+   --silver :#BEBEBE ;
+   --coverd : #FEFEFE;
+   --silver2 : linear-gradient(180deg, rgba(217, 217, 217, 0.4) 0%, rgba(254, 254, 254, 0) 88.99%);
+   /* how use silver2: background: var(--silver2)  */
+   /* how not use silver2: background-color: var(--silver2) */
+
+}
 *{
    margin: 0;
    padding: 0;
    box-sizing: border-box;
+   font-family: var(--font);
+}
+
+#root{
+   width: 100%;
+   height: 100%;
+   position: relative;
+}
+body{
+   padding: 12px 0 0 0 ;
+   width: 100vw;
+   height: 100vh;
+}
+
+.center {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
 }

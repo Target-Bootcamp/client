@@ -1,0 +1,15 @@
+.contentNoActive{
+    width: 90%;
+}
+.contentActive{
+    width: 80%;
+}
+.content{
+    background-color: var(--covered);
+    /* background: var(--silver2); */
+    height: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    border-radius: 0px 60px 0px 0px;
+}
