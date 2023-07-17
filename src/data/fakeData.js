@@ -193,13 +193,13 @@ export const actionTypes = [
 
 export const days =
 {
-   day1: "'א",
-   day2: "'ב",
-   day3: "'ג",
-   day4: "'ד",
-   day5: "'ה",
-   day6: "'ו",
-   day7: "'ז",
+   1: "'א",
+   2: "'ב",
+   3: "'ג",
+   4: "'ד",
+   5: "'ה",
+   6: "'ו",
+   7: "'ז",
 }
 
 
@@ -208,12 +208,3 @@ export const orderSource = ["עריית בני ברק", "מועצה אזורית
 export const fundingSource = ["משרד הכלכלה", `מגע"ר`]
 
 export default ({ actions, users, actionTypes, days, orderSource, fundingSource })
-
-
-
-// TODO :
-// ---- days - number to day (hebrew) {1 : "'א"}
-// ---- object of  actionType  { color, nameHebrew , _id}
-// - settings
-// ---- orderSource = ["",""]
-// ---- fundingSource = ["",""]

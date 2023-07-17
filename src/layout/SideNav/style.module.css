@@ -16,4 +16,5 @@
     flex-direction: column;
     justify-content: start !important;
     padding-top: 30px;
+    overflow: hidden;
 }

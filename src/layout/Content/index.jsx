@@ -16,13 +16,13 @@ const  Content = ({style={}}) => {
   return (
     <div className={`center ${styles.content} ${activety?styles.contentActive:styles.contentNoActive}`} style={style}>
       <Routes>
-        <Route path='/' element={<div>main page</div>}/>
-        <Route path='/action' element={<NewAction/>}/>
-        <Route path='/action/:id' element={<Action/>}/>
-        <Route path='/action/:id/files' element={<Files/>}/>
-        <Route path='/action/:id/students' element={<Students/>}/>
-        <Route path='/action/:id/schedule' element={<Schedule/>}/>
-        <Route path='/action/:id/tasks' element={<Tasks/>}/>
+        <Route path='/' element={<div>main page</div>} />
+        <Route path='/action' element={<NewAction />} />
+        <Route path='/action/:id' element={<Action />} />
+        <Route path='/action/:id/files' element={<Files />} />
+        <Route path='/action/:id/students' element={<Students />} />
+        <Route path='/action/:id/schedule' element={<Schedule />} />
+        <Route path='/action/:id/tasks' element={<Tasks />} />
       </Routes>
     </div>
   );
