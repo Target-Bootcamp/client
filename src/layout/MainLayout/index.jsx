@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styles from './style.module.css' 
 import SideNav from '../SideNav';
 import Content from '../Content';
+import {DataContext} from '../../context/index'
 
-const MainLayout = () => {    
-    const [active, setActive] = useState(true);
-// false
+const MainLayout = () => {   
+    const context = useContext(DataContext);
+    const setActivety = context.setIsActive;
+    useEffect(()=>{
+        window.location.pathname==="/"?setActivety(false):"";
+    },[]) 
     return (
         <div className={`center ${styles.hiro}`}>
-            <SideNav active={active}/>
-            <Content active={active}/> 
+            <SideNav/>
+            <Content/> 
         </div>
     );
 }
