@@ -1,8 +1,6 @@
 import React, { useContext } from 'react'
 import { DataContext } from '../context'
-import Popup from '../layout/Popup';
-import Template from '../components/Template';
-import Asher from './Asher';
+import apiCalls from '../functions/apiCalls';
 
 
 
@@ -10,11 +8,14 @@ import Asher from './Asher';
 export default function Sagi() {
    const context = useContext(DataContext)
 
-   console.log(context);
+   const startpopupandcallservar = () => {
+      apiCalls.get("http://localhost:3008/all", context.setPopUp)
+   }
+
 
    return (
       <>
-         <button onClick={() => context.setPopUp(< >dddd</>)} >popup</button>
+         <button onClick={startpopupandcallservar} > checkpopup&server</button>
       </>
    )
 }
