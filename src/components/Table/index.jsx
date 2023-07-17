@@ -21,9 +21,10 @@ import styles from './style.module.css'
           value.push(objeckt[name]);
         }
       return <tr> {value.map(val=>{
-         // if (funk.length<0){
-         //     return (<><td><button onClick={()=>props.deletion(val)}>❌</button></td>
-         //       <td><button onClick={()=>props.editing(val)}>editing</button></td> 
+         // if (props.deletion){
+         //     return (<><td><button onClick={()=>props.deletion(val)}>❌</button></td></>}
+         //      if(props.deletion) {return<> <td><button onClick={()=>props.editing(val)}>editing</button>
+         //</td> 
          //       </>)}
       
 

@@ -1,0 +1,15 @@
+.sideNavNoActive{
+    width: 15%;
+}
+.sideNavActive{
+    width: 25%;
+}
+.sideNav{
+    background-color: var(--primary);
+    height: 100%;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    border-radius: 0px 60px 0px 0px;
+    padding-left: 5%;
+}
