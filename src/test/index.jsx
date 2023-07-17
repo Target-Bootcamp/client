@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom'
-import Aviad from './Aviad'
-import Shay from './Shay'
-import Tzvi from './Tzvi'
-import Moyshi from './Moyshi'
-import Eli from './Eli'
+//import Aviad from './Aviad'
+//import Shay from './Shay'
+//import Tzvi from './Tzvi'
+//import Moyshi from './Moyshi'
+//import Eli from './Eli'
 import Yonatan from './Yonatan'
 import Avraham from './Avraham'
 import Sagi from './Sagi'
@@ -17,11 +17,11 @@ import Inon from './Inon'
 export default function MainTest() {
    return (
       <Routes>
-         <Route path='/aviad' element={<Aviad />} />
+         {/* <Route path='/aviad' element={<Aviad />} />
          <Route path='/shay' element={<Shay />} />
          <Route path='/tzvi' element={<Tzvi />} />
          <Route path='/moyshi' element={<Moyshi />} />
-         <Route path='/eli' element={<Eli />} />
+         <Route path='/eli' element={<Eli />} /> */}
          <Route path='/yonatan' element={<Yonatan />} />
          <Route path='/avraham' element={<Avraham />} />
          <Route path='/sagi' element={<Sagi />} />
