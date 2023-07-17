@@ -9,12 +9,12 @@ import Asher from './Asher';
 
 export default function Sagi() {
    const context = useContext(DataContext)
-   // console.log(context);
 
-   console.log(context.PopUp);
+   console.log(context);
+
    return (
       <>
-         <button onClick={() => context.setPopUp(<Asher />)} > popup</button>
+         <button onClick={() => context.setPopUp(< >dddd</>)} >popup</button>
       </>
    )
 }
