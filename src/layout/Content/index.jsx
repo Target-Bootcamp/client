@@ -7,9 +7,12 @@ import Files from '../../pages/Files';
 import Schedule from '../../pages/Schedule';
 import Tasks from '../../pages/Tasks';
 import Students from '../../pages/Students';
+import MainTest from '../../test';
 const  Content = ({active,style={}}) => {
   return (
     <div className={`center ${styles.content} ${active?styles.contentActive:styles.contentNoActive}`} style={style}>
+        <MainTest />
+
       <Routes>
         <Route path='/' element={<div>main page</div>}/>
         <Route path='/action' element={<NewAction/>}/>
