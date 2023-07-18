@@ -15,7 +15,10 @@ export default function Yonatan() {
    return (
      
       <div>
-        <FormAddEdit userToUpdate={userToUpdate}  /> 
+         <button onClick={()=> valueContext.setPopUp( <FormAddEdit userToUpdate={userToUpdate}  /> )}>
+            click
+         </button>
+         <FormAddEdit /> 
       </div>
    )
 }

@@ -2,10 +2,12 @@ import React from 'react';
 import styles from "./style.module.css";
 import InputText from "../InputText";
 import Button from "../Button";
+import { DataContext } from '../../context';
 
 // creator : yonatan ben david
-
+// props : {object of student to update 
 export default function FormAddEdit(props) {
+
   function newStudent(student) {
     const newStudent = {
       name: student.target.name.value,
