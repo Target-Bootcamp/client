@@ -1,7 +1,7 @@
 import styles from './style.module.css'
 import {DataContext} from '../../context'
 import { useContext } from 'react'
-// props : pageName ,actionType
+// props : pageName ,actionType /* <PageHeader pageName={"תלמידים"} actionType={"workshop"}/> */
 // creator:zvi miler
 function PageHeader({ pageName,actionType, style = {}, ...props }) {
 const Data =useContext(DataContext)

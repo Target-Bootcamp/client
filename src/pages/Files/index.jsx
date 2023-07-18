@@ -3,26 +3,28 @@ import styles from './style.module.css'
 import { useParams } from 'react-router';
 import { DataContext } from '../../context';
 import Table from '../../components/Table';
+import PageHeader from '../../components/pageHeader';
 
 
 
 const Files = () => {
     const params = useParams()
     const data = useContext(DataContext)
-    const [files,setFiles]=useState([])
-    const myActions =data.actions.find(v=>v._id===params.id)
-    console.log(myActions);
+    const [files, setFiles] = useState([])
+    const myActions = data.actions.find(v => v._id === params.id)
+    // console.log("myActions:", myActions);
+    const myfile = myActions.files;
+    console.log("myfile:", myfile);
     useEffect(()=>{
-     const myfile=myActions.files;
-     setFiles(myfile)
-     console.log("files:",files);
+    //  setFiles(myfile)
+    console.log(files);
     },[])
     return (
-        <div className={`center ${styles.Files}`}>
-            files {params.id}page
-            {myActions._id}
-            <Table  data={files}/>
-            {/* <Commont stet={files} usestet={setFiles}/> */}
+        <div className={` ${styles.Files}`}>
+
+<PageHeader pageName={"הוספת קבצים"} actionType={myActions.actionType}/>
+            <Table data={myfile} arr={["fileName"]} />
+
         </div>
     );
 }

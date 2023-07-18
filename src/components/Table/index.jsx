@@ -6,7 +6,7 @@ export default function Table(props) {
 
    function tempFunck(objeckt) {
       return <tr> {obj.map(key => {
-         return <td>{objeckt[key]}</td>
+         return <td >{objeckt[key]}</td>
       })}  {props.deletion ? <td><button onClick={() => props.deletion(objeckt)}><BsTrash /></button></td> : null}
          {props.editing ? <td><button onClick={() => props.editing(objeckt)}><BsFillPencilFill /></button></td> : null}
 
