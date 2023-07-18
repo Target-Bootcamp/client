@@ -1,8 +1,11 @@
 import React from 'react'
+import FormAddEdit from '../components/FormAddEdit'
 
 export default function Yonatan() {
    return (
      
-      <div>yonatan</div>
+      <div>
+         <FormAddEdit />
+      </div>
    )
 }
