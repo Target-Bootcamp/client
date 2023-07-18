@@ -22,7 +22,7 @@ export default function Table({ data, arr, deletion, editing, TaskMarking }) {
                   <button className={objeckt[key] ? styles.button : styles.checknun}
                      onClick={() => TaskMarking(objeckt)}> </button>
                }
-            </td> : <td>{objeckt[key]}</td>}</>
+            </td> : key === "deadline" ? <td>{objeckt[key].toLocaleDateString()}</td> : <td>{objeckt[key]}</td>}</>
 
       })}  {deletion ? <td><button onClick={() => deletion(objeckt)}>
          <BsTrash className={styles.icons} /></button></td> : null}
