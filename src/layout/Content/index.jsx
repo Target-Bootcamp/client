@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import styles from './style.module.css' 
 import { Route, Routes } from 'react-router-dom';
 import {DataContext} from '../../context/index'
-import MainTest from '../../test';
 // pages
 import Action from '../../pages/Action';
 import NewAction from '../../pages/NewAction';
@@ -10,6 +9,8 @@ import Files from '../../pages/Files';
 import Schedule from '../../pages/Schedule';
 import Tasks from '../../pages/Tasks';
 import Students from '../../pages/Students';
+import {DataContext} from '../../context/index'
+import MainTest from '../../test'
 const  Content = ({style={}}) => {
   const context = useContext(DataContext);
   const activety = context.isActive
