@@ -7,6 +7,7 @@ import {DataContext} from '../../context/index'
 const MainLayout = () => {   
     const context = useContext(DataContext);
     const setActivety = context.setIsActive;
+    console.log(context);
     useEffect(()=>{
         window.location.pathname==="/"?setActivety(false):"";
     },[]) 
