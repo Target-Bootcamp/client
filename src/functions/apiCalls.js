@@ -1,25 +1,25 @@
 import axios from "axios"
- axios
+//  axios
 
-const  api = {
-    post : async (url, data)=>{
-        apicalls("post")
-    }
-}
+// const  api = {
+//     post : async (url, data)=>{
+//         apicalls("post")
+//     }
+// }
 
-async function apicalls(method, url, body) {
+async function apicalls(method, url, setUsestate, body) {
 
-    let result = await axios({
-        method,
-        url,
-        headers:{
-            "Authorization":"Bearer "+ localStorage.token
-        }
-    })
+    //     let result = await axios({
+    //         method,
+    //         url,
+    //         headers:{
+    //             "Authorization":"Bearer "+ localStorage.token
+    //         }
+    //     })
 
-    return result.data
-console.log(error);
-    throw error
+    //     return result.data
+    // console.log(error);
+    //     throw error
 
     if (method === "get") {
         axios
