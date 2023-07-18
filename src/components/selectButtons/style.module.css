@@ -1,0 +1,17 @@
+.select {
+    background-color: rgb(230, 222, 238);
+    display: inline;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    grid-gap: 15px;
+}
+
+.activee{
+    background-color: rgb(140, 184, 226) !important;
+
+}

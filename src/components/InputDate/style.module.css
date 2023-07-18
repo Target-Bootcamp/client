@@ -1,0 +1,26 @@
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+input {
+
+    border: none;
+}
+
+.dateBox {
+    Width: 210px;
+    Height: 38px;
+    border-radius: 15px;
+    padding: 5px;
+    text-align: center;
+    margin: 5px;
+    background: linear-gradient(180deg, #FEFEFE 0%, rgba(254, 254, 254, 0) 100%);
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.text {
+    font-family: Assistant;
+    margin-left: 2px;
+}
