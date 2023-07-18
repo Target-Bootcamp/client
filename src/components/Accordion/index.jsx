@@ -15,7 +15,7 @@ const Accordion = ({ items, style = {}, ...props }) => {
     return (
         <div>
             {items.map((item, index) => (
-                <div key={index} className={styles.card}>
+                <div key={index} className={styles.card} onClick={() => handleToggle(index)}>
                     <div className={styles.headCard}>
                         <div className={styles.headCardRight}>
                             <div>{item.actionType}</div>
@@ -23,11 +23,7 @@ const Accordion = ({ items, style = {}, ...props }) => {
                         </div>
                         <div className={styles.headCardLeft}>
                             <div>{item.tasks.filter(obj => obj.isDone == true).length}/{item.tasks.length}</div>
-                            {toogel === index ? (
-                                <div onClick={() => handleToggle(index)}>-</div>
-                            ) : (
-                                <div onClick={() => handleToggle(index)}>+</div>
-                            )}
+                            <div>{toogel === index ? "-" : "+"}</div>
                         </div>
                     </div>
                     {/* <div>{item.startDate}</div> */}
@@ -40,9 +36,9 @@ const Accordion = ({ items, style = {}, ...props }) => {
                                 </div>
                             ))}
 
-                <button>
-                    הוספת משימה
-                </button>
+                            <button>
+                                הוספת משימה
+                            </button>
                         </div>
                     )}
                 </div>
