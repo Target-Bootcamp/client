@@ -1,22 +1,39 @@
 import axios from "axios"
+//  axios
 
+// const  api = {
+//     post : async (url, data)=>{
+//         apicalls("post")
+//     }
+// }
 
+async function apicalls(method, url, setUsestate, body) {
 
-function apicalls(metod, url, setUsestate, body) {
+    //     let result = await axios({
+    //         method,
+    //         url,
+    //         headers:{
+    //             "Authorization":"Bearer "+ localStorage.token
+    //         }
+    //     })
 
-    if (metod === "get") {
+    //     return result.data
+    // console.log(error);
+    //     throw error
+
+    if (method === "get") {
         axios
             .get(url)
             .then(res => setUsestate(res.data))
             .catch(error => console.log(error))
     }
-    else if (metod === "post") {
+    else if (method === "post") {
         axios
             .post(url, body)
             .then(res => setUsestate(res.data))
             .catch(error => console.log(error))
     }
-    else if (metod === "put") {
+    else if (method === "put") {
         axios
             .put(url, body)
             .then(res => setUsestate(res.data))
