@@ -5,7 +5,6 @@ import {DataContext} from '../../context/index'
 
 const Tasks = () => {
     const context = useContext(DataContext);
-    const activety = context.isActive;
     const setActivety = context.setIsActive;
     useEffect(()=>{
         setActivety(true)
