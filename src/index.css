@@ -142,6 +142,7 @@ h4 {
    max-width: 1086px;
    width: 100%;
    border-radius: 20px;
+   background: var(--silver2);
 }
 
 .scroller {
