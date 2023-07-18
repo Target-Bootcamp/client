@@ -1,0 +1,39 @@
+/* .tw {
+  font-family: arial, sans-serif;
+  border-collapse:collapse ;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.595);
+  color: white;
+  
+  
+} */
+
+td, th {
+  /* border: 2px solid #dddddd; */
+  text-align: center;
+  padding: 4px;
+  min-width: 80px;
+}
+.button{
+background-color: black;
+width: 30px;
+height: 30px;
+border-radius: 50%;
+
+}
+.checknun{
+  background-color:white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+ 
+  }
+  .icons{
+    width: 25px;
+    height: 25px;
+  }
+  .addNwe{
+    width: 40px;
+    height: 30px;
+    border-radius: 45%;
+  }

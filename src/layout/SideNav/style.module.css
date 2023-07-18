@@ -1,16 +1,20 @@
-.sideNavNoActive{
-    width: 15%;
-}
 .sideNavActive{
+    width: 15%;
+    gap: 30px;
+}
+.sideNavNoActive{
     width: 25%;
 }
 .sideNav{
     background-color: var(--primary);
     height: 100%;
     position: absolute;
-    right: 0;
     z-index: 1;
+    right: 0;
     border-radius: 0px 60px 0px 0px;
     padding-left: 5%;
+    flex-direction: column;
+    justify-content: start !important;
+    padding-top: 30px;
     overflow: hidden;
 }
