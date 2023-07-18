@@ -13,7 +13,7 @@ function Search({ placeholder, data }) {
     const allData = useContext(DataContext).settings[data]
 
     const onChange = event => {
-        event.target.value.length > 2 ? setFilterData(() =>
+        event.target.value.length > 1 ? setFilterData(() =>
             allData.filter(i => i.includes(event.target.value))
         ) : setFilterData([])
         setInput(event.target.value)

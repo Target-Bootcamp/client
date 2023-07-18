@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import styles from './style.module.css'
 import {DataContext} from '../../context/index'
 import Search from '../../components/Search';
+import SelectButtons from '../../components/selectButtons';
 const NewAction = ({}) => {
     const action = {
         _id: "",
@@ -45,13 +46,20 @@ const NewAction = ({}) => {
     }
     const context = useContext(DataContext);
     const [activety,setActivety] = useState(action)
+    const actArr = [{value:"סדנא",text:"סדנא"},{value:"קורס",text:"קורס"},{value:"מכינה",text:"מכינה"}]
 
     useEffect(()=>{
         context.setIsActive(true)
     },[])
     return (
         <div className={`center ${styles.newAction}`} > 
+        <div className={`center ${styles.inputs}`}>
             <Search placeholder={"גוף מזמין..."} data={"fundingSource"} />
+            <Search placeholder={"גוף מממן..."} data={"orderSource"} />
+        </div>
+        <div className={`center ${styles.actionButtons}`}>
+            <SelectButtons options={actArr}/>
+        </div>
 
         </div>
     );
