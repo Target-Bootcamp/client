@@ -7,9 +7,11 @@ import styles from './style.module.css'
 
 
 function Search({ placeholder, data }) {
+
     const [filterData, setFilterData] = useState([])
     const [input, setInput] = useState("")
     const allData = useContext(DataContext).settings[data]
+
     const onChange = event => {
         event.target.value.length > 2 ? setFilterData(() =>
             allData.filter(i => i.includes(event.target.value))
@@ -20,6 +22,7 @@ function Search({ placeholder, data }) {
         setInput(value.value)
         setFilterData([])
     }
+    
     return (
         <div className={styles.container}>
             <div className={styles.Search}>
