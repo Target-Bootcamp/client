@@ -21,7 +21,7 @@ const Files = () => {
         <div className={`center ${styles.Files}`}>
             files {params.id}page
             {myActions._id}
-            <Table  files={files}/>
+            <Table  data={files}/>
             {/* <Commont stet={files} usestet={setFiles}/> */}
         </div>
     );
