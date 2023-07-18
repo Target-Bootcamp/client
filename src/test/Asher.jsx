@@ -11,6 +11,6 @@ export default function Asher() {
 
    return (
 
-      <div><Table data={data.actions[0].tasks} deletion={del} editing={del} arr={arr} /></div>
+      <div><Table data={data.users} deletion={del} editing={del} /></div>
    )
 }

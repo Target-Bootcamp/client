@@ -1,5 +1,7 @@
 import styles from './style.module.css'
 import { BsTrash, BsFillPencilFill } from "react-icons/Bs";
+import { useContext } from 'react';
+import { DataContext } from '../../context';
 
 
 //props: An array of objects,Delete function
@@ -7,8 +9,9 @@ import { BsTrash, BsFillPencilFill } from "react-icons/Bs";
 //Whatever you want to be displayed to the provider as an array of course,
 //Task marking function
 
-export default function Table(props) {
-   let obj = props.arr ?? Object.keys(props.data[0])
+export default function Table({ data, arr, deletion, editing, TaskMarking }) {
+   const tata = useContext(DataContext)
+   let obj = arr ?? Object.keys(data[0])
 
    function tempFunck(objeckt) {
       return <tr > {obj.map(key => {
@@ -17,20 +20,27 @@ export default function Table(props) {
                {
 
                   <button className={objeckt[key] ? styles.button : styles.checknun}
-                   onClick={() => props.TaskMarking(objeckt)}> </button>
+                     onClick={() => TaskMarking(objeckt)}> </button>
                }
             </td> : <td>{objeckt[key]}</td>}</>
 
-      })}  {props.deletion ? <td><button onClick={() => props.deletion(objeckt)}>
+      })}  {deletion ? <td><button onClick={() => deletion(objeckt)}>
          <BsTrash className={styles.icons} /></button></td> : null}
-         {props.editing ? <td><button onClick={() => props.editing(objeckt)}>
+         {editing ? <td><button onClick={() => editing(objeckt)}>
             <BsFillPencilFill className={styles.icons} /></button></td> : null}
       </tr>
    }
 
    return (
-      <table className={styles.tw}>{obj.map(val => <th>{val}</th>)}
-         {props.data.map((value) => tempFunck(value)
+
+      <table className="tw">
+         {/* {obj.map(val => <th>{val}</th>)} */}
+         {data.map((value) => tempFunck(value)
          )}
+         <tbody>
+            <tr>
+               <td><button className={styles.addNwe} >+</button></td>
+            </tr>
+         </tbody>
       </table>)
 }
