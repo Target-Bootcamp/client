@@ -3,12 +3,18 @@ import FormAddEdit from '../components/FormAddEdit'
 import { DataContext } from '../context'
 
 export default function Yonatan() {
-   const userToUpdate = {
-      name:"user",
-      lastName:"last name",
-      phone:"054444511",
-      email:"email",
-   }
+   const userToUpdate =  {
+      _id: "1",
+      userId: "123",
+      fName: 'Avi',
+      lName: "Sason",
+      phone: "0505477654",
+      email: "avi@gmail.com",
+      participantNum: 324,
+      comments: null,
+      permission: "student"
+   };
+
   
    const valueContext = useContext(DataContext)
    console.log(valueContext);
