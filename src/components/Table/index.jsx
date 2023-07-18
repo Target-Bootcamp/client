@@ -20,12 +20,14 @@ export default function Table(props) {
       </tr>
    }
 
-   return (<table>{obj.map(val => <th>{val}</th>)}
+   return (
+      <table>
+         {obj.map(val => <th>{val}</th>)}
 
 
-      {props.data.map((value) => tempFunck(value)
-      )}
+         {props.data.map((value) => tempFunck(value)
+         )}
 
 
-   </table>)
+      </table>)
 }
