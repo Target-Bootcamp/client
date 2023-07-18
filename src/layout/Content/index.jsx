@@ -8,6 +8,7 @@ import Schedule from '../../pages/Schedule';
 import Tasks from '../../pages/Tasks';
 import Students from '../../pages/Students';
 import {DataContext} from '../../context/index'
+import MainTest from '../../test'
 const  Content = ({style={}}) => {
   const context = useContext(DataContext);
   const activety = context.isActive
@@ -15,6 +16,7 @@ const  Content = ({style={}}) => {
   
   return (
     <div className={`center ${styles.content} ${activety?styles.contentActive:styles.contentNoActive}`} style={style}>
+      <MainTest/>
       <Routes>
         <Route path='/' element={<div>main page</div>} />
         <Route path='/action' element={<NewAction />} />
