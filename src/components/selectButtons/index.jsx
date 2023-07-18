@@ -10,12 +10,18 @@ export default function SelectButtons({ options, isSingleChoice, className }) {
 
     return (
         <div>
-            {options.map(val => val.map(v => {
+            {options.map(v => {
+                return <button className={` ${choice === v.value ? styles.activee : ""}
+                       ${styles.select}`} key={v.value} onClick={() =>
+                        setChoice(v.value)}> {v.text} </button>
+            })
+            }
+            {/* {options.map(val => val.map(v => {
                 return <button className={`${choice === v.value ? styles.activee : ""}
                        ${styles.select} ${className}`} key={v.value} onClick={() =>
                         setChoice(v.value)}> {v.text} </button>
             }))
-            }
+            } */}
         </div>
     )
 }

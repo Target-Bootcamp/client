@@ -9,7 +9,6 @@ import Button from '../../components/Button'
 
 const Tasks = () => {
     const context = useContext(DataContext);
-    const activety = context.isActive;
     const setActivety = context.setIsActive;
     useEffect(() => {
         setActivety(true)
