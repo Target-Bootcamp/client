@@ -1,46 +1,31 @@
 import styles from './style.module.css'
 import { BsTrash, BsFillPencilFill } from "react-icons/bs";
-import { useContext } from 'react';
-import { DataContext } from '../../context';
 
+// creator: asher 
 
 //props: An array of objects,Delete function
 //Editing function,
 //Whatever you want to be displayed to the provider as an array of course,
 //Task marking function
 
-export default function Table({ data, arr, deletion, editing, TaskMarking }) {
-   const tata = useContext(DataContext)
-   let obj = arr ?? Object.keys(data[0])
+export default function Table(props) {
+   let obj = props.arr ?? Object.keys(props.data[0])
 
    function tempFunck(objeckt) {
-      return <tr > {obj.map(key => {
-         return <>
-            {key === "isDone" ? <td >
-               {
+      return <tr> {obj.map(key => {
+         return <td>{objeckt[key]}</td>
+      })}  {props.deletion ? <td><button onClick={() => props.deletion(objeckt)}><BsTrash /></button></td> : null}
+         {props.editing ? <td><button onClick={() => props.editing(objeckt)}><BsFillPencilFill /></button></td> : null}
 
-                  <button className={objeckt[key] ? styles.button : styles.checknun}
-                     onClick={() => TaskMarking(objeckt)}> </button>
-               }
-            </td> : <td>{objeckt[key]}</td>}</>
-
-      })}  {deletion ? <td><button onClick={() => deletion(objeckt)}>
-         <BsTrash className={styles.icons} /></button></td> : null}
-         {editing ? <td><button onClick={() => editing(objeckt)}>
-            <BsFillPencilFill className={styles.icons} /></button></td> : null}
       </tr>
    }
 
-   return (
+   return (<table>{obj.map(val => <th>{val}</th>)}
 
-      <table className="tw">
-         {/* {obj.map(val => <th>{val}</th>)} */}
-         {data.map((value) => tempFunck(value)
-         )}
-         <tbody>
-            <tr>
-               <td><button className={styles.addNwe} >+</button></td>
-            </tr>
-         </tbody>
-      </table>)
+
+      {props.data.map((value) => tempFunck(value)
+      )}
+
+
+   </table>)
 }

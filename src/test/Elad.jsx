@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import InputText from '../components/InputText'
 import Button from '../components/Button';
-import Tasks from '../pages/Tasks';
 
 export default function Elad({butoonName}) {
    const [inputValue, setInputValue] = useState([{}]);
@@ -28,7 +27,7 @@ export default function Elad({butoonName}) {
 
       // </form>
          // <Button className="w210" butoonName={"שעת התחלה : 11:00"} onClick={()=> console.log("good")}/>
-         < Tasks />
+         < Schedule />
 
          
    )
