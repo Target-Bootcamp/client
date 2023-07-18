@@ -2,6 +2,9 @@
     background-color: rgb(230, 222, 238);
     display: inline;
     justify-content: center;
+    width: 100px;
+    height: 30px;
+    border-radius: 40px;
 }
 
 .container {
