@@ -1,7 +1,94 @@
 .newAction{
     width: 100%;
     height: 100%;
+    flex-direction: column;
+}
+.header{
+    width: 95%;
+    height: 20%;
+    /* background-color: aqua; */
+    flex-direction: column;
+    align-items: start !important;
+
+}
+.header h3{
+    margin: 0;
+    font-weight: 650;
+    /* font-size: 30px; */
+}
+.main{
+    width: 95%;
+    height: 80%;
+    border-radius: 20px;
+    background: var(--silver2);
+    display: flex;
+    justify-content: space-between;
+    
+}
+.mainRight{
+    flex-direction: column;
+    width: 35%;
+    height: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: start ;
+    padding: 20px;
+    gap: 50px;
+}
+.actionType{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.actionType div{
+    display: flex;
+    justify-content: space-around;
+}
+.main h4{
+    margin: 0;
+    width: 100%;
+    text-align: start;
+    font-weight: 650;
+    padding: 0 25px;
 }
 .inputs{
+    width: 100%;
     flex-direction: column;
+    gap: 15px;
+    padding: 15px 0;
+}
+.actionLocation{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.actionLocation div{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    /* padding: 0 20px; */
+}
+.days{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.days div{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+}
+/* -------------------------------------------------------------------------------------------------- */
+.mainLeft{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    height: 100%;
+    gap: 50px;
+
 }
