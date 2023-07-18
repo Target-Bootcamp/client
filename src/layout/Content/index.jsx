@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import styles from './style.module.css' 
 import { Route, Routes } from 'react-router-dom';
-import {DataContext} from '../../context/index'
 // pages
 import Action from '../../pages/Action';
 import NewAction from '../../pages/NewAction';
@@ -18,7 +17,8 @@ const  Content = ({style={}}) => {
   
   
   return (
-    <div className={`center ${styles.content} ${activety?styles.contentActive:styles.contentNoActive}`} style={style}>
+    
+    <div className={`${styles.content} ${activety?styles.contentActive:styles.contentNoActive}`} style={style}>
       <MainTest/>
       <Routes>
         <Route path='/' element={<div>main page</div>} />
@@ -29,7 +29,7 @@ const  Content = ({style={}}) => {
         <Route path='/action/:id/schedule' element={<Schedule />} />
         <Route path='/action/:id/tasks' element={<Tasks />} />
       </Routes>
-    </div>
+      </div>
   );
 }
 
