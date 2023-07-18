@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import styles from './style.module.css' 
 import { Route, Routes } from 'react-router-dom';
+// pages
 import Action from '../../pages/Action';
 import NewAction from '../../pages/NewAction';
 import Files from '../../pages/Files';
@@ -14,8 +15,10 @@ const  Content = ({style={}}) => {
   const activety = context.isActive
   const setActivety = context.setIsActive
   
+  
   return (
-    <div className={`center ${styles.content} ${activety?styles.contentActive:styles.contentNoActive}`} style={style}>
+    
+    <div className={`${styles.content} ${activety?styles.contentActive:styles.contentNoActive}`} style={style}>
       <MainTest/>
       <Routes>
         <Route path='/' element={<div>main page</div>} />
@@ -26,7 +29,7 @@ const  Content = ({style={}}) => {
         <Route path='/action/:id/schedule' element={<Schedule />} />
         <Route path='/action/:id/tasks' element={<Tasks />} />
       </Routes>
-    </div>
+      </div>
   );
 }
 
