@@ -1,5 +1,5 @@
 import axios from "axios"
-//  axios
+axios.defaults.baseURL="http://localhost:7777"
 
 // const  api = {
 //     post : async (url, data)=>{

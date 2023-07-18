@@ -8,6 +8,7 @@ import Files from '../../pages/Files';
 import Schedule from '../../pages/Schedule';
 import Tasks from '../../pages/Tasks';
 import Students from '../../pages/Students';
+import Dashboard from '../../pages/Dashboard'
 import {DataContext} from '../../context/index'
 import MainTest from '../../test'
 const  Content = ({style={}}) => {
@@ -21,7 +22,7 @@ const  Content = ({style={}}) => {
     <div className={`${styles.content} ${activety?styles.contentActive:styles.contentNoActive}`} style={style}>
       <MainTest/>
       <Routes>
-        <Route path='/' element={<div>main page</div>} />
+        <Route path='/' element={<Dashboard/>} />
         <Route path='/action' element={<NewAction />} />
         <Route path='/action/:id' element={<Action />} />
         <Route path='/action/:id/files' element={<Files />} />
