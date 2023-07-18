@@ -1,5 +1,6 @@
 
 import { useContext } from 'react';
+import Cards from '../components/Cards';
 import Table from '../components/Table'
 import { DataContext } from '../context';
 export default function Asher() {
@@ -18,6 +19,7 @@ export default function Asher() {
    // console.log(aa);
    return (
 
-      <div><Table data={data.actions[0].tasks} deletion={del} editing={del} /></div>
+      <div><Table data={data.actions[0].files} deletion={del} editing={del} /></div>
+      // <Cards />
    )
 }
