@@ -1,3 +1,4 @@
+
 .contentActive{
     width: 90%;
 }
@@ -11,4 +12,5 @@
     left: 0;
     z-index: 2;
     border-radius: 0px 60px 0px 0px;
+    padding: 18px;
 }
