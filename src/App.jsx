@@ -9,7 +9,6 @@ function App() {
     <>
       <MainContext>
         <MainRouter />
-        {/* <MainTest/> */}
       </MainContext>
     </>
   )
