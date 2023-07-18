@@ -15,5 +15,3 @@ function Efraim() {
 }
 
 export default Efraim
-
-
