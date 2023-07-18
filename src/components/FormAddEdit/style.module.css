@@ -1,0 +1,15 @@
+.containerFrom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+.form > Button {
+    align-self: flex-end;
+    margin-top: 12px;
+}
