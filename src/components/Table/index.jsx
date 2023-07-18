@@ -1,5 +1,5 @@
 import styles from './style.module.css'
-import { BsTrash, BsFillPencilFill } from "react-icons/Bs";
+import { BsTrash, BsFillPencilFill } from "react-icons/bs";
 import { useContext } from 'react';
 import { DataContext } from '../../context';
 
