@@ -20,9 +20,9 @@ const Tasks = () => {
     console.log(allData.files);
     return (
         <div className={`center ${styles.tasks}`}>
-            {/* <Table props={allData.files} /> */}
             <div><PageHeader pageName={"משימות לביצוע"} actionType={allData.actionType} /> </div>
-            <div>{/* tasks {params.id} page */}</div>
+            <Table data={allData.files} />
+            <div>{/* tasks {params.id} page */} </div>
             <div><Button className="w140" /* onClick={(onClick)}     type={type}*/ butoonName="שמור" /></div>
 
         </div>
