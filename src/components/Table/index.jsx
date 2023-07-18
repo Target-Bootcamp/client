@@ -1,5 +1,5 @@
 import styles from './style.module.css'
-import { BsTrash, BsFillPencilFill } from "react-icons/Bs";
+import { BsTrash, BsFillPencilFill } from "react-icons/bs";
 
 export default function Table(props) {
    let obj = props.arr ?? Object.keys(props.data[0])
