@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import styles from './style.module.css'
-import {DataContext} from '../../context/index'
+import { DataContext } from '../../context/index'
 import Search from '../../components/Search';
 import SelectButtons from '../../components/selectButtons';
 import InputText from '../../components/InputText';
 import InputDate from '../../components/InputDate';
-const NewAction = ({}) => {
+const NewAction = ({ }) => {
     const action = {
         _id: "",
         orderSource: "",
@@ -22,71 +22,71 @@ const NewAction = ({}) => {
         actionType: '',
         name: "",
         files: [
-           {
-              fileName: "",
-              fileType: '',
-              size: "",
-              createdDate: null
-           }
+            {
+                fileName: "",
+                fileType: '',
+                size: "",
+                createdDate: null
+            }
         ],
         tasks: [
-           {
-              deadline: {},
-              details: "",
-              isDone: false,
-           }
+            {
+                deadline: {},
+                details: "",
+                isDone: false,
+            }
         ],
         users: [],
         schedules: [
-           {
-              date: {},
-              lecturer: "",
-              comments: "",
-              status: ""
-           }
+            {
+                date: {},
+                lecturer: "",
+                comments: "",
+                status: ""
+            }
         ]
     }
     const context = useContext(DataContext);
-    const [activety,setActivety] = useState(action)
-    const statusArr = [{value:"טרם בוצעה",text:"טרם בוצעה"},{value:"נשלחה",text:"נשלחה"},{value:"נחתמה",text:"נחתמה"}]
-    const typeArr = [{value:"סדנא",text:"סדנא"},{value:"קורס",text:"קורס"},{value:"מכינה",text:"מכינה"}]
-    const locationArr = [{value:"workshop",text:"בגוף המזמין"},{value:"externally",text:"כיתה חיצונית"}]
+    const [activety, setActivety] = useState(action)
+    const statusArr = [{ value: "טרם בוצעה", text: "טרם בוצעה" }, { value: "נשלחה", text: "נשלחה" }, { value: "נחתמה", text: "נחתמה" }]
+    const typeArr = [{ value: "סדנא", text: "סדנא" }, { value: "קורס", text: "קורס" }, { value: "מכינה", text: "מכינה" }]
+    const locationArr = [{ value: "workshop", text: "בגוף המזמין" }, { value: "externally", text: "כיתה חיצונית" }]
     const daysArr = [{ text: 'יום א', value: 1 }, { text: 'יום ב', value: 2 }, { text: 'יום ג', value: 3 }, { text: 'יום ד', value: 4 }, { text: 'יום ה', value: 5 }, { text: 'יום ו', value: 6 }]
 
 
-    useEffect(()=>{
+    useEffect(() => {
         context.setIsActive(true)
-    },[])
+    }, [])
     return (
-        <div className={`center ${styles.newAction}`} > 
+        <div className={`center scroller ${styles.newAction}`} >
             <div className={`center ${styles.header}`}>
                 <h3>פעילות חדשה</h3>
-                <InputText/>
+                <InputText />
             </div>
             <div className={`${styles.main}`} >
                 <div className={`${styles.mainRight}`}>
                     <div className={`${styles.actionType}`}>
                         <h4>סוג הפעילות</h4>
                         <div>
-                        <   SelectButtons width={"60px"} options={typeArr}/>
+                            <   SelectButtons width={"60px"} options={typeArr} />
                         </div>
                     </div>
                     <div className={`center ${styles.inputs}`}>
-                        <Search  placeholder={"גוף מזמין..."} data={"fundingSource"} />
-                        <Search  placeholder={"גוף מממן..."} data={"orderSource"} />
+                        <Search placeholder={"גוף מזמין..."} data={"fundingSource"} />
+                        <Search placeholder={"גוף מממן..."} data={"orderSource"} />
                     </div>
                     <div className={`${styles.actionLocation}`}>
                         <h4>מיקום הפעילות</h4>
                         <div>
-                            <SelectButtons width={"130px"} options={locationArr}/>
+                            <SelectButtons width={"130px"} options={locationArr} />
                         </div>
                     </div>
                     <div className={`${styles.days}`}>
                         <h4>ימי לימוד</h4>
                         <div>
-                            <SelectButtons width={"40px"} options={daysArr}/>
+                            <SelectButtons width={"40px"} options={daysArr} />
                         </div>
-                        
+
                     </div>
                 </div>
                 {/* ------------------------------------------------------------------------ */}
@@ -97,12 +97,12 @@ const NewAction = ({}) => {
                     </div>
                     <div className={`center ${styles.inputs}`}>
                         <h4>תאריכים</h4>
-                        <InputDate/>
+                        <InputDate />
                     </div>
                     <div className={`center ${styles.actionLocation}`}>
-                    <h4>סטטוס הזמנה</h4>
+                        <h4>סטטוס הזמנה</h4>
                         <div>
-                            <SelectButtons width={"120px"} options={statusArr}/>
+                            <SelectButtons width={"120px"} options={statusArr} />
                         </div>
                     </div>
                 </div>
