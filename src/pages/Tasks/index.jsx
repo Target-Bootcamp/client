@@ -4,9 +4,8 @@ import { useParams } from 'react-router-dom';
 import { DataContext } from '../../context/index'
 import PageHeader from '../../components/PageHeader'
 import Table from '../../components/Table'
-import Button from '../../components/Button'
 import Popup from '../../layout/Popup';
-
+import apiCalls from '../../functions/apiCalls'
 
 const Tasks = () => {
     const context = useContext(DataContext);
@@ -14,8 +13,19 @@ const Tasks = () => {
     useEffect(() => {
         setActivety(true)
     }, [])
+
+    useEffect(() => {
+        apiCalls.get('/actions')
+            .then(res => setCount(res))
+            .catch(errow => console.log(errow))
+
+    }, [])
+
+
+
+
     const params = useParams()
-    const allData = useContext(DataContext).actions.find(i => i.lecturer === params.id)
+    const allData = useContext(DataContext).actions.find(i => i._id === params.id)
     const arr = ["isDone", "details", "deadline", "editing"]
     console.log(allData, "yyyuu");
 
