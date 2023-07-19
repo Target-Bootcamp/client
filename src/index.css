@@ -153,8 +153,8 @@ h4 {
    align-items: center;
    text-align: center;
    padding: 10px;
-   justify-content: space-evenly;
-   max-width: 205px;
+   justify-content: space-between;
+   max-width: 200px;
    width: 100%;
    height: 40px;
    border-radius: 20px;
