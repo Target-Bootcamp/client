@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './style.module.css'
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
+import { DataContext } from '../../context/index'
+import Search from '../../components/Search';
+
 const Action = () => {
+    const context = useContext(DataContext);
     const params = useParams()
+
+    useEffect(()=>{
+        context.setIsActive(true)
+    },[])
+
     return (
-        <div className={`center ${styles.action}`}>
-            action {params.id} page
+        <div className={` ${styles.action}`}>
+
+
+            action
+
+
         </div>
     );
 }
 
 export default Action;
+
+
+

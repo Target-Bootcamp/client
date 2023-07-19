@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import MainLayout from '../layout/MainLayout'
+import Accordion from '../components/Accordion'
+import { DataContext } from '../context'
 
 export default function Avraham() {
+   const context = useContext(DataContext)
    return (
       <>
-      {/* true */}
-      {/* false */}
-         <MainLayout active={false}
-          contentChilden={<div>sagy</div>}
-          navChilden={<div>nav</div>}/>
+         {/* <Accordion items={context.actions}/> */}
+         avrhahm 
       </>
    )
 }

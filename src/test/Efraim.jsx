@@ -1,7 +1,16 @@
 import React from 'react'
+import Search from '../components/Search' 
 
-export default function Efraim() {
+
+function Efraim() {
    return (
-      <div>Efraim</div>
+      <div>
+         <Search placeholder={"גוף מזמין..."} data={"fundingSource"} />
+         <Search placeholder={"גוף מממין..."} data={"orderSource"} />
+
+      </div>
+
    )
 }
+
+export default Efraim
