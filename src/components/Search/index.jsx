@@ -6,7 +6,7 @@ import styles from './style.module.css'
 
 
 
-function Search({ placeholder, data ,width}) {
+function Search({ placeholder, data, width }) {
 
     const [filterData, setFilterData] = useState([])
     const [input, setInput] = useState("")
@@ -22,10 +22,12 @@ function Search({ placeholder, data ,width}) {
         setInput(value.value)
         setFilterData([])
     }
-    
+    function exit() {
+        setFilterData("")
+    }
     return (
-        <div className={styles.container}>
-            <div style={{width}} className={styles.Search}>
+        <div className={styles.container} onClick={() => exit()}>
+            <div style={{ width }} className={styles.Search}>
                 <input type="text" value={input} placeholder={placeholder} onChange={onChange} />
             </div>
             {filterData.length > 0 &&

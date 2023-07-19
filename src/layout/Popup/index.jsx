@@ -12,7 +12,7 @@ export default function Popup() {
 
     return (
         <>
-            <div onClick={(e) => exit(e)} className={styles.backpopup} >
+            <div className={styles.backpopup} onClick={() => exit()} >
 
                 <div className={styles.popup} onClick={e => e.stopPropagation()} >
 
