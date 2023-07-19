@@ -9,6 +9,40 @@ import FormAddEdit from '../../components/FormAddEdit';
 // creator : yonatan ben david
 const Students = () => {
 
+    function newStudent(student) {
+        const newStudent = {
+            _id: null,
+            userId: null,
+            fName: student.target.name.value,
+            lName: student.target.lastName.value,
+            phone: student.target.phoneNumber.value,
+            email: student.target.email.value,
+            participantNum: null,
+            comments: null,
+            permission: null,
+        };
+        // axios.post(url, newStudent)
+        // .then(res => console.log(res))
+        // .catch(err => console.log(err))
+        console.log(newStudent);
+    }
+
+    function UpdateStudent(studentToUpdate, _id) {
+        const updateStudent = {
+            _id,
+            fName: studentToUpdate.target.name.value,
+            lName: studentToUpdate.target.lastName.value,
+            phone: studentToUpdate.target.phoneNumber.value,
+            email: studentToUpdate.target.email.value,
+
+        }
+
+
+
+        console.log("student to update: ", updateStudent);
+        return updateStudent
+    }
+
 
     const valueContext = useContext(DataContext);
     const params = useParams();
@@ -23,7 +57,7 @@ const Students = () => {
             <div>
                 <div className={`${styles.students}`}>
                     <PageHeader actionType={activityType} pageName={"תלמידים"} />
-                    <Table data={students} TaskMarking={obj => valueContext.setPopUp(<FormAddEdit  />)}  editing={obj=> valueContext.setPopUp(<FormAddEdit userToUpdate={obj} />)}/>
+                    <Table data={students} TaskMarking={obj => valueContext.setPopUp(<FormAddEdit newStudent={newStudent} UpdateStudent={UpdateStudent} />)} editing={obj => valueContext.setPopUp(<FormAddEdit userToUpdate={obj} UpdateStudent={UpdateStudent} newStudent={newStudent} />)} />
                 </div>
             </div>
         );
