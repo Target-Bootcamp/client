@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { createContext } from "react"
 import fakeData from '../data/fakeData'
+import Popup from '../layout/Popup'
 
 export const DataContext = createContext({})
 
@@ -21,7 +22,9 @@ export default function MainContext({ children }) {
 
    return (
       <DataContext.Provider value={{ actions, setAction, users, setUsers, settings, setSetings, popUp, setPopUp,isActive, setIsActive }} >
-         <>{children}</>
+         <>{children} 
+         {popUp&& <Popup/>}
+         </>
       </DataContext.Provider>
    )
 }

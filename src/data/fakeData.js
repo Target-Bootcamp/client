@@ -290,13 +290,13 @@ export const  actions= [
       name: 'full stack',
       files: [
          {
-            fileName: "syllabus-fs",
+            name: "syllabus-fs",
             fileType: 'txt',
             size: "2433",
             createdDate: new Date("2023-12-04")
          },
          {
-            fileName: "images01",
+            name: "images01",
             fileType: 'jpg',
             size: "202131",
             createdDate: new Date("2023-11-06")

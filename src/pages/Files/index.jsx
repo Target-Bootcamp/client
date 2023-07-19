@@ -4,7 +4,8 @@ import { useParams } from 'react-router';
 import { DataContext } from '../../context';
 import Table from '../../components/Table';
 import PageHeader from '../../components/pageHeader';
-
+import Common from '../../components/Common';
+import EditFile from '../../components/EditFile.jsx';
 
 
 const Files = () => {
@@ -12,19 +13,18 @@ const Files = () => {
     const data = useContext(DataContext)
     const [files, setFiles] = useState([])
     const myActions = data.actions.find(v => v._id === params.id)
-    // console.log("myActions:", myActions);
-    const myfile = myActions.files;
-    console.log("myfile:", myfile);
     useEffect(()=>{
-    //  setFiles(myfile)
-    console.log(files);
+        const myfile = myActions.files;
+     setFiles(myfile)
     },[])
+
     return (
-        <div className={` ${styles.Files}`}>
-
+<div>
 <PageHeader pageName={"הוספת קבצים"} actionType={myActions.actionType}/>
-            <Table data={myfile} arr={["fileName"]} />
-
+        <div className={styles.files}>
+            <Table data={files} arr={["fileName","name"]} editing={(obj)=>data.setPopUp(<EditFile obj={obj}/>)}/>
+{/* <Common stet={files} setStet={setFiles}/> */}
+</div>
         </div>
     );
 }
