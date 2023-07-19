@@ -98,7 +98,7 @@ const NewAction = ({ }) => {
                         <h4>שעות לימוד</h4>
                         overs input
                     </div>
-                    <div className={`center ${styles.inputs}`}>
+                    <div className={`${styles.inputs}`}>
                         <h4>תאריכים</h4>
                         <InputDate />
                     </div>
