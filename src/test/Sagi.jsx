@@ -1,11 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { DataContext } from '../context'
 import apiCalls from '../functions/apiCalls';
 
 
-
-
 export default function Sagi() {
+   useEffect(() => {
+      apiCalls.get('/actions')
+         .then(console.table)
+         .catch(console.warn)
+
+   }, [])
    const context = useContext(DataContext)
 
    // const startpopupandcallservar = () => {
