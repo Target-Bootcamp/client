@@ -22,7 +22,14 @@ export default function MainContext({ children }) {
 
    return (
       <DataContext.Provider value={{ actions, setAction, users, setUsers, settings, setSetings, popUp, setPopUp, isActive, setIsActive }} >
-         <>{children}  {popUp && <Popup />}</>
+         <>
+
+            {children}
+
+            {popUp && <Popup />}
+
+         </>
+
       </DataContext.Provider>
    )
 }
