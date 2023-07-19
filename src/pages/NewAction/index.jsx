@@ -55,7 +55,7 @@ const NewAction = ({}) => {
 
 
     useEffect(()=>{
-        context.setIsActive(true)
+        context.setIsActive(false)
     },[])
     return (
         <div className={`center ${styles.newAction}`} > 
@@ -68,7 +68,7 @@ const NewAction = ({}) => {
                     <div className={`${styles.actionType}`}>
                         <h4>סוג הפעילות</h4>
                         <div>
-                        <   SelectButtons width={"60px"} options={typeArr}/>
+                        <   SelectButtons classN={"w94"} options={typeArr}/>
                         </div>
                     </div>
                     <div className={`center ${styles.inputs}`}>
@@ -78,13 +78,13 @@ const NewAction = ({}) => {
                     <div className={`${styles.actionLocation}`}>
                         <h4>מיקום הפעילות</h4>
                         <div>
-                            <SelectButtons width={"130px"} options={locationArr}/>
+                            <SelectButtons classN={"w166"} options={locationArr}/>
                         </div>
                     </div>
                     <div className={`${styles.days}`}>
                         <h4>ימי לימוד</h4>
                         <div>
-                            <SelectButtons width={"40px"} options={daysArr}/>
+                            <SelectButtons classN={"w55"} options={daysArr}/>
                         </div>
                         
                     </div>
@@ -102,7 +102,7 @@ const NewAction = ({}) => {
                     <div className={`center ${styles.actionLocation}`}>
                     <h4>סטטוס הזמנה</h4>
                         <div>
-                            <SelectButtons width={"120px"} options={statusArr}/>
+                            <SelectButtons classN={"w110"} options={statusArr}/>
                         </div>
                     </div>
                 </div>
