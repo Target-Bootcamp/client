@@ -16,7 +16,6 @@ const MainLayout = () => {
         <div className={`center ${styles.hiro}`}>
             <SideNav />
             <Content />
-            {/* {context.popUp && <Popup />} */}
         </div>
     );
 }
