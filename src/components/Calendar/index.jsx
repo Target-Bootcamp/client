@@ -35,10 +35,10 @@ export default function Calendar(props, task) {
         const formattedDate = value.toLocaleDateString('en-GB').split('/').reverse().join('-');
         setCurrentDate(formattedDate)
 
-        props.funciton(formattedDate)
+        // props.funciton(formattedDate)
+        // console.log(props.funciton);
 
 
-   
 
 
         const activity = prompt('add a task');
