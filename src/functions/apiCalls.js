@@ -1,8 +1,8 @@
 import axios from "axios"
 axios.defaults.baseURL = "http://localhost:7777"
 
-async function apicalls(method, url, data) {
 
+async function apicalls(method, url, data) {
     try {
         const result = await axios({
             method,
@@ -19,6 +19,7 @@ async function apicalls(method, url, data) {
         throw error
     }
 }
+
 
 const get = (url) => {
     return apicalls("get", url)
