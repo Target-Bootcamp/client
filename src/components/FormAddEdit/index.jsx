@@ -39,6 +39,9 @@ export default function FormAddEdit(props) {
       comments: props.userToUpdate.comments,
       permission: props.userToUpdate.permission,
     }
+
+    
+
     console.log("student to update: ", updateStudent);
     return updateStudent
   }
