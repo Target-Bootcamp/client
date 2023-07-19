@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import FormAddEdit from '../components/FormAddEdit'
 import { DataContext } from '../context'
+import Action from '../pages/Action'
 
 export default function Yonatan() {
    const userToUpdate = {
@@ -15,7 +16,9 @@ export default function Yonatan() {
    return (
      
       <div>
-        <FormAddEdit userToUpdate={userToUpdate}  /> 
+         <Action />
+{/* 
+        <FormAddEdit userToUpdate={userToUpdate}  />  */}
       </div>
    )
 }
