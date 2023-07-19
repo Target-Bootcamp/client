@@ -23,7 +23,7 @@ const Tasks = () => {
     return (
         <div className={`center ${styles.tasks}`}>
             <div><PageHeader pageName={"משימות לביצוע"} actionType={allData.actionType} /> </div>
-            <Table data={allData.tasks} arr={arr} editing={<Popup />} deletion={<Popup />} TaskMarking={<Popup />} />
+            <Table data={allData.tasks} arr={arr} /*editing={<Popup />}*/ deletion={<Popup />} TaskMarking={<Popup />} />
             <div>{/* tasks {params.id} page */} </div>
 
         </div>
