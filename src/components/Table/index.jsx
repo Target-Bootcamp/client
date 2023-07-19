@@ -2,7 +2,7 @@ import styles from './style.module.css'
 import { BsTrash, BsFillPencilFill } from "react-icons/bs";
 import { useContext } from 'react';
 import { DataContext } from '../../context';
-import FormAddEdit from '../FormAddEdit';
+import FormAddEdit from '../FormAddEditStudent';
 
 
 //props: An array of objects,Delete function

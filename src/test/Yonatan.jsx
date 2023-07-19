@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import FormAddEdit from '../components/FormAddEdit'
+import FormAddEdit from '../components/FormAddEditStudent'
 import { DataContext } from '../context'
 
 export default function Yonatan() {

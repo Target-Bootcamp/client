@@ -4,7 +4,7 @@ import { useParams } from 'react-router';
 import { DataContext } from '../../context/index';
 import Table from '../../components/Table';
 import PageHeader from '../../components/PageHeader';
-import FormAddEdit from '../../components/FormAddEdit';
+import FormAddEditStudent from '../../components/FormAddEditStudent';
 
 // creator : yonatan ben david
 const Students = () => {
@@ -57,7 +57,7 @@ const Students = () => {
             <div>
                 <div className={`${styles.students}`}>
                     <PageHeader actionType={activityType} pageName={"תלמידים"} />
-                    <Table data={students} TaskMarking={obj => valueContext.setPopUp(<FormAddEdit newStudent={newStudent} UpdateStudent={UpdateStudent} />)} editing={obj => valueContext.setPopUp(<FormAddEdit userToUpdate={obj} UpdateStudent={UpdateStudent} newStudent={newStudent} />)} />
+                    <Table data={students} TaskMarking={obj => valueContext.setPopUp(<FormAddEditStudent newStudent={newStudent} UpdateStudent={UpdateStudent} />)} editing={obj => valueContext.setPopUp(<FormAddEditStudent userToUpdate={obj} UpdateStudent={UpdateStudent} newStudent={newStudent} />)} />
                 </div>
             </div>
         );
