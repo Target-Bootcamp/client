@@ -13,4 +13,6 @@
     z-index: 2;
     border-radius: 0px 60px 0px 0px;
     padding: 18px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
