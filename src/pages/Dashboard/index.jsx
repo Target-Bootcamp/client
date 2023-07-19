@@ -35,7 +35,7 @@ apiCalls.get('/actions')
 
             <div className={styles.left}>
                 <div><Shay /></div>
-                <Cards action={data.actions} />
+                <Cards action={filterArr} />
             </div>
         </div>
 
