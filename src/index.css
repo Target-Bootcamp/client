@@ -67,9 +67,9 @@ h4 {
 .w110 {
    box-shadow: 6px 10px 9px 0px rgba(214, 197, 197, 0.27);
    border: none;
-   background: var(--primary);
+   /* background: var(--primary); */
    font-size: 15px;
-   color: var(--coverd);
+   /* color: var(--coverd); */
    border-radius: var(--radius);
    max-width: 110px;
    width: 100%;
@@ -142,6 +142,7 @@ h4 {
    max-width: 1086px;
    width: 100%;
    border-radius: 20px;
+   background: var(--silver2);
 }
 
 .scroller {

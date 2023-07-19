@@ -10,7 +10,7 @@ export default function InputText({ style = {}, type , name, placeholder,
 
         
     return (
-
+            
         <input className={styles.name} style={style} {...props}
             type={type} defaultValue={defaultValue} placeholder={placeholder}
             name={name} onChange={onChange} />
