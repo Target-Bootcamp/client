@@ -57,7 +57,7 @@ const Students = () => {
             <div>
                 <div className={`${styles.students}`}>
                     <PageHeader actionType={activityType} pageName={"תלמידים"} />
-                    <Table data={students} TaskMarking={obj => valueContext.setPopUp(<FormAddEditStudent newStudent={newStudent} UpdateStudent={UpdateStudent} />)} editing={obj => valueContext.setPopUp(<FormAddEditStudent userToUpdate={obj} UpdateStudent={UpdateStudent} newStudent={newStudent} />)} />
+                    <Table deletion={"del"} data={students} add={obj => valueContext.setPopUp(<FormAddEditStudent newStudent={newStudent} UpdateStudent={UpdateStudent} />)} editing={obj => valueContext.setPopUp(<FormAddEditStudent userToUpdate={obj} UpdateStudent={UpdateStudent} newStudent={newStudent} />)} />
                 </div>
             </div>
         );
