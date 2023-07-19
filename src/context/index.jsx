@@ -19,9 +19,10 @@ export default function MainContext({ children }) {
    const [settings, setSetings] = useState(settingsObj)
    const [popUp, setPopUp] = useState()
    const [isActive, setIsActive] = useState(false)
+   const [date, setDate] = useState()
 
    return (
-      <DataContext.Provider value={{ actions, setAction, users, setUsers, settings, setSetings, popUp, setPopUp, isActive, setIsActive }} >
+      <DataContext.Provider value={{ date, setDate, actions, setAction, users, setUsers, settings, setSetings, popUp, setPopUp, isActive, setIsActive }} >
          <>{children}  {popUp && <Popup />}</>
 
       </DataContext.Provider>

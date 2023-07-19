@@ -1,0 +1,33 @@
+.card{
+    width: 90%;
+    height: 125px;
+    background-color: aqua;
+    display: flex;
+margin: 15px;
+    flex-direction: column;
+    padding: 15px;
+    /* gap: 15px; */
+    justify-content: space-around;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.bottun{
+    display: flex;
+    justify-content: space-between;
+}
+.name{
+    display: flex;
+    justify-content:right ;
+}
+*{
+   list-style: none;
+text-decoration: none;
+   
+}
+.listcard{
+    height: 100%
+
+}

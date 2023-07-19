@@ -18,8 +18,11 @@ export default function Asher() {
 
    // console.log(aa);
    return (
-
-      <div><Table data={data.actions[0].files} deletion={del} editing={del} /></div>
-      // <Cards />
+      // <div className={styles.main}>
+      //   <div className={styles.right}>
+      //       <Cards which={right} />
+      // //   </div></div>
+       <div><Table data={data.actions[0].files} deletion={del} editing={del} /></div>
+     
    )
 }

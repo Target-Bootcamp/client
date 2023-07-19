@@ -27,7 +27,7 @@ export default function Table({ data, arr, deletion, editing, TaskMarking }) {
 
       })}  {deletion ? <td><button onClick={() => deletion(objeckt)}>
          <BsTrash className={styles.icons} /></button></td> : null}
-         {editing ? <td><button onClick={() => editing(objeckt)}>
+         {editing ? <td><button onClick={() => data(objeckt)}>
             <BsFillPencilFill className={styles.icons} /></button></td> : null}
       </tr>
    }
