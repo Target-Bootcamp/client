@@ -9,7 +9,7 @@ import { CiFolderOn} from 'react-icons/ci'
 import { Link } from 'react-router-dom';
 const SideNavButtons = () => {
     
-    const [active, setActive] = useState(0);
+    const [active, setActive] = useState("");
     const textArr =[
         {text:"פרטים",icon:<AiOutlineInfoCircle/>,to:"/action/1"},
         {text:"קבצים",icon:<CiFolderOn/>,to:'/action/1/files'},

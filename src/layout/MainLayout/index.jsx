@@ -12,6 +12,7 @@ const MainLayout = () => {
     useEffect(() => {
         window.location.pathname === "/" ? setActivety(false) : "";
     }, [])
+
     return (
         <div className={`center ${styles.hiro}`}>
             <SideNav />
