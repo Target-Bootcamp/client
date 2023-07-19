@@ -54,7 +54,6 @@ export default function Calendar(props, task) {
     const tileContent = ({ date, view }) => {
         if (view === 'month') {
             const formattedDate = date.toLocaleDateString('en-GB').split('/').reverse().join('-');
-
             const dayActivities = activities.find(item => item.date === formattedDate);
             const dayActivityBank = activityBank.find(item => item.date === formattedDate);
 

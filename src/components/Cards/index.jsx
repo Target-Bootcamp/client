@@ -14,14 +14,15 @@ export default function Cards(props) {
             <div className={styles.name}> {i.lecturer}</div>
             <div className={styles.bottun}>
                 <div>{`${props.action[0].endTime}-${props.action[0].startTime}`}</div>
-                <div> {`${i.startDate.toLocaleDateString()}-${i.endDate.toLocaleDateString()}`}</div></div>
+                {/* <div> {`${i.startDate.toLocaleDateString()}-${i.endDate.toLocaleDateString()}`}</div> */}
+            </div>
 
 
         </li>
         </Link>
     })
 
-    }   
+    }
     </ul>
 
 } 
