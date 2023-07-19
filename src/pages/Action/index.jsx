@@ -9,7 +9,7 @@ const Action = () => {
     const params = useParams()
 
     useEffect(()=>{
-        context.setIsActive(true)
+        context.setIsActive(false)
     },[])
 
     return (
