@@ -1,7 +1,8 @@
+import Badge from "../components/Badge";
 
 
 export default function Yosef() {
    return (
-      <div>Yosef</div>
+      <div><Badge rule={"מחשבים"}/></div>
    )
 }
