@@ -1,68 +1,39 @@
 import axios from "axios"
-//  axios
+axios.defaults.baseURL = "http://localhost:7777"
 
-// const  api = {
-//     post : async (url, data)=>{
-//         apicalls("post")
-//     }
-// }
+async function apicalls(method, url, data) {
 
-async function apicalls(method, url, setUsestate, body) {
+    try {
+        const result = await axios({
+            method,
+            data,
+            url,
+            headers: {
+                "Authorization": "Bearer " + localStorage.token
+            }
+        })
+        return result.data
 
-    //     let result = await axios({
-    //         method,
-    //         url,
-    //         headers:{
-    //             "Authorization":"Bearer "+ localStorage.token
-    //         }
-    //     })
-
-    //     return result.data
-    // console.log(error);
-    //     throw error
-
-    if (method === "get") {
-        axios
-            .get(url)
-            .then(res => setUsestate(res.data))
-            .catch(error => console.log(error))
-    }
-    else if (method === "post") {
-        axios
-            .post(url, body)
-            .then(res => setUsestate(res.data))
-            .catch(error => console.log(error))
-    }
-    else if (method === "put") {
-        axios
-            .put(url, body)
-            .then(res => setUsestate(res.data))
-            .catch(error => console.log(error))
-    }
-    else {
-        axios
-            .delete(url)
-            .then(res => setUsestate(res.data))
-            .catch(error => console.log(error))
+    } catch (error) {
+        console.log(error);
+        throw error
     }
 }
 
-
-
-const get = (url, setUsetate) => {
-    apicalls("get", url, setUsetate)
+const get = (url) => {
+    return apicalls("get", url)
 }
 
-const post = (url, setUsetate, body) => {
-    apicalls("post", url, setUsetate, body)
+const post = (url, data) => {
+    return apicalls("post", url, data)
 }
 
-const put = (url, setUsetate, body) => {
-    apicalls("put", url, setUsetate, body)
+const put = (url, data) => {
+    return apicalls("put", url, data)
 }
 
-const Delete = (url, setUsetate) => {
-    apicalls("delete", url, setUsetate)
+const Delete = (url, data) => {
+    return apicalls("delete", url, data)
 }
 export default ({ get, post, put, Delete })
 
