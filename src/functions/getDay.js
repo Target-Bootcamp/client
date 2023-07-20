@@ -29,6 +29,7 @@ function convertDateFormat(dateStr) {
     return `${dd}/${mm}/${ccyy}`;
 }
 
+
 export default { GetDayName, convertDateFormat }
 
 // let dateStr = '18/07/2023';

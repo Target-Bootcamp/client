@@ -5,6 +5,7 @@ import { DataContext } from '../../context/index'
 import PageHeader from '../../components/pageHeader';
 import Table from '../../components/Table';
 import dayFunction from '../../functions/getDay';
+import Button from '../../components/Button';
 
 
 const Schedule = () => {
@@ -33,6 +34,8 @@ const Schedule = () => {
             schedule {params.id} page
             < PageHeader pageName="לוח זמנים" actionType={actionHeader.actionType} />
             < Table data={newKey} arr={orderarr} />
+            <Button className="w154" butoonName={"שמור"} />
+            
         </div>
     );
 }
