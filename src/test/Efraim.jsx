@@ -1,10 +1,16 @@
 import React from 'react'
-import Table from '../components/Table/index'
-export default function Efraim() {
+import Search from '../components/Search' 
+
+
+function Efraim() {
    return (
-      <div><Table/></div>
+      <div>
+         <Search placeholder={"גוף מזמין..."} data={"fundingSource"} />
+         <Search placeholder={"גוף מממין..."} data={"orderSource"} />
+
+      </div>
+
    )
 }
 
-
-
+export default Efraim

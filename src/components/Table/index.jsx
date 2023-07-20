@@ -1,24 +1,48 @@
 import styles from './style.module.css'
-import { BsTrash, BsFillPencilFill } from "react-icons/Bs";
+import { BsTrash, BsFillPencilFill } from "react-icons/bs";
+import { useContext } from 'react';
+import { DataContext } from '../../context';
+import FormAddEdit from '../FormAddEditStudent';
 
-export default function Table(props) {
-   let obj = props.arr ?? Object.keys(props.data[0])
+
+//props: An array of objects,Delete function
+//Editing function,
+//Whatever you want to be displayed to the provider as an array of course,
+//Task marking function
+
+export default function Table({ data, arr, deletion, editing, TaskMarking, add }) {
+   const tata = useContext(DataContext)
+   let obj = arr ?? Object.keys(data[0])
 
    function tempFunck(objeckt) {
-      return <tr> {obj.map(key => {
-         return <td>{objeckt[key]}</td>
-      })}  {props.deletion ? <td><button onClick={() => props.deletion(objeckt)}><BsTrash /></button></td> : null}
-         {props.editing ? <td><button onClick={() => props.editing(objeckt)}><BsFillPencilFill /></button></td> : null}
+      return <tr > {obj.map(key => {
+         return <>
+            {key === "isDone" ? <td >
+               {
 
+                  <button className={objeckt[key] ? styles.button : styles.checknun}
+                 onClick={()=> TaskMarking={objeckt}} > </button>
+               }
+            </td> : objeckt[key] instanceof Date ? <td>{objeckt[key].toLocaleDateString()}</td>
+               : <td>{objeckt[key]}</td>}</>
+
+      })}  {deletion ? <td><button onClick={() => deletion(objeckt)}>
+         <BsTrash className={styles.icons} /></button></td> : null}
+         {editing ? <td><button onClick={() => editing(objeckt)}>
+            <BsFillPencilFill className={styles.icons} /></button></td> : null}
       </tr>
    }
 
-   return (<table>{obj.map(val => <th>{val}</th>)}
+   return (
 
-
-      {props.data.map((value) => tempFunck(value)
-      )}
-
-
-   </table>)
+      <table className="tw">
+         {/* {obj.map(val => <th>{val}</th>)} */}
+         {data.map((value) => tempFunck(value)
+         )}
+         <tbody>
+            <tr>
+               <td><button onClick={() => add()} className={styles.addNwe} >+</button></td>
+            </tr>
+         </tbody>
+      </table>)
 }
