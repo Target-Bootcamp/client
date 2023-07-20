@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const RadioCheckbox = ({ task, task_id }) => {
   const [isChecked, setIsChecked] = useState(task.isDone);
+  {/* to do add function that updates the server with the new task status */ }
   // Function to update the server with the new task status
   const updateTaskStatus = (task_id, status) => {
     const url = `/api/tasks/${task_id}`;
@@ -32,8 +33,14 @@ const RadioCheckbox = ({ task, task_id }) => {
 
   return (
     <label className={isChecked ? styles.checked : styles.notChecked}>
-      <input type="checkbox" checked={isChecked} onChange={handleChange} />
-      {task.details}
+      <input type="checkbox" className={styles.circularCheckbox} checked={isChecked} onChange={handleChange} />
+      <div className={styles.showDate}>
+        {task.details}
+      </div>
+      <span className={styles.hideDate}>
+        {/* to do add date */}
+        12/02/2025
+      </span>
     </label>
   );
 };

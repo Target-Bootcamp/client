@@ -18,6 +18,7 @@ const Accordion = ({ items, style = {}, ...props }) => {
                     <div className={styles.headCard} onClick={() => handleToggle(index)}>
                         <div className={styles.headCardRight}>
                             <div>{item.actionType}</div>
+                            {/* to do add icon orderSource */}
                             <div>{item.orderSource}</div>
                         </div>
                         <div className={styles.headCardLeft}>
@@ -39,15 +40,12 @@ const Accordion = ({ items, style = {}, ...props }) => {
                         <div className={styles.bodyCard}>
                             {item.tasks.map((task, i) => (
                                 <div key={i}>
-                                    {/* to do add function that updates the server with the new task status on component RadioCheckbox */}
                                     <RadioCheckbox task={task} />
-                                    {/* TO DO: TaskDate */}
-                                    {/* <div className={styles.subTaskDate}>{task.taskDueDate}</div> */}
                                 </div>
                             ))}
                             <div className={styles.addTaskBtnArea}>
+                                {/* to do set up the popup */}
                                 <div className={styles.addTaskBtn} onClick={() => dataContext.setPopUp(<div>hello</div>)}>
-                                    {/* to do add function onClick */}
                                     <div className={styles.addTaskBtnIcon}>&#43;</div>
                                     הוספת משימה
                                 </div>
