@@ -1,7 +1,7 @@
 import styles from './style.module.css'
 import { useState } from 'react'
 import RadioCheckbox from '../RadioCheckbox'
-
+import Popup from "../../layout/Popup"
 
 // props : 
 // creator: yinon ron
@@ -16,7 +16,7 @@ const Accordion = ({ items, style = {}, ...props }) => {
         <div>
             {items.map((item, index) => (
                 <div key={index} className={styles.card}>
-                    <div className={styles.headCard}>
+                    <div className={styles.headCard} onClick={() => handleToggle(index)}>
                         <div className={styles.headCardRight}>
                             <div>{item.actionType}</div>
                             <div>{item.orderSource}</div>
@@ -24,66 +24,40 @@ const Accordion = ({ items, style = {}, ...props }) => {
                         <div className={styles.headCardLeft}>
                             <div>{item.tasks.filter(obj => obj.isDone == true).length}/{item.tasks.length}</div>
                             {toogel === index ? (
-                                <div onClick={() => handleToggle(index)}>-</div>
+                                <div className={styles.addTaskBtn}>
+                                    <div className={styles.addTaskBtnIcon}>-</div>
+                                </div>
                             ) : (
-                                <div onClick={() => handleToggle(index)}>+</div>
+                                <div className={styles.addTaskBtn}>
+                                    <div className={styles.addTaskBtnIcon}>+</div>
+                                </div>
                             )}
                         </div>
                     </div>
-                    {/* <div>{item.startDate}</div> */}
+                    {/* to do add end date */}
+                    <div>12/02/24</div>
                     {toogel === index && (
                         <div className={styles.bodyCard}>
-                            {item.tasks.map((tasks, i) => (
+                            {item.tasks.map((task, i) => (
                                 <div key={i}>
-                                    {tasks.isDone ? <div className={styles.done}> <RadioCheckbox isDone={tasks.isDone} />{" " + tasks.details}</div> : <div className={styles.notDone}><RadioCheckbox isDone={tasks.isDone} /> {" " + tasks.details}</div>}
-                                    <div className={styles.subTaskDate} >{tasks.taskDueDate}</div>
+                                    {task.isDone ? <div className={styles.done}>
+                                        {/* to do add function that updates the server with the new task status on componnt RadioCheckbox */}
+                                        <RadioCheckbox isDone={task.isDone} />{" " + task.details}</div> : <div className={styles.notDone}><RadioCheckbox isDone={task.isDone} /> {" " + task.details}</div>}
+                                    <div className={styles.subTaskDate} >{task.taskDueDate}</div>
                                 </div>
                             ))}
-
-                <button>
-                    הוספת משימה
-                </button>
+                            <div className={styles.addTaskBtnArea}>
+                                <div className={styles.addTaskBtn}>
+                                    {/* to do add function onClick */}
+                                    <div className={styles.addTaskBtnIcon} >&#43;</div>
+                                    הוספת משימה
+                                </div>
+                            </div>
                         </div>
                     )}
                 </div>
             ))}
         </div>
-
-
-
-        // old
-        //     <div>
-        //         {items.map((item, index) => (
-        //             <div key={index} className={styles.card}>
-        //                 <div className={styles.bodyCard}>
-        //                     <div>{item.taskName}</div>
-        //                     <div>{item.taskType}</div>
-        //                     <div>0/{item.taskArray.length}</div>
-        //                     {toogel === index ? (
-        //                         <div onClick={() => handleToggle(index)}>-</div>
-        //                     ) : (
-        //                         <div onClick={() => handleToggle(index)}>+</div>
-        //                     )}
-        //                 </div>
-        //                 <div>{item.taskDueDate}</div>
-        //                 {toogel === index && (
-        //                     <div className={styles.taskCard}>
-        //                         {item.taskArray.map((subItem, i) => (
-        //                             <div key={i}>
-        //                                 {subItem.isDone ? <div className={styles.done}> <RadioCheckbox isDone={subItem.isDone} />{" " + subItem.taskName}</div> : <div className={styles.notDone}><RadioCheckbox isDone={subItem.isDone} /> {" " + subItem.taskName}</div>}
-        //                                 <div className={styles.subTaskDate} >{subItem.taskDueDate}</div>
-        //                             </div>
-        //                         ))}
-        //                     </div>
-        //                 )}
-        //             </div>
-        //         ))}
-        //         <div>
-        //             <button>
-        //                 הוספת משימה
-        //             </button>
-        //         </div>
-        //     </div>
     );
 };
 
