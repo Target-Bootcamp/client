@@ -13,15 +13,15 @@ export default function Calendar(props, task) {
     const [currentDate, setCurrentDate] = useState()
     const activityBank = [
         {
-            'date': '2023-07-17',
+            'date': '17.7.2023',
             'activity': "קורס פול סטאק"
         },
         {
-            'date': '2023-07-18',
+            'date': '18.7.2023',
             'activity': "קורס פול סטאק"
         },
         {
-            'date': '2023-07-20',
+            'date': '19 .7.2023',
             'activity': "קורס פול סטאק"
         }]
 
@@ -29,14 +29,15 @@ export default function Calendar(props, task) {
         setDate(date);
     };
 
-    console.log(props.date);
+    // console.log(props.date);
 
     const onDayClick = (value) => {
-        const formattedDate = value.toLocaleDateString('en-GB').split('/').reverse().join('-');
+        const formattedDate = value.toLocaleDateString();
         setCurrentDate(formattedDate)
 
         // props.funciton(formattedDate)
         // console.log(props.funciton);
+        console.log(value.toLocaleDateString());
 
 
 
@@ -50,19 +51,33 @@ export default function Calendar(props, task) {
             ]);
         }
     };
-    console.log(props.funciton);
+    // console.log(props.funciton);
+
+
     const tileContent = ({ date, view }) => {
         if (view === 'month') {
-            const formattedDate = date.toLocaleDateString('en-GB').split('/').reverse().join('-');
+            const formattedDate = date.toLocaleDateString();
+            function sendMonth() {
+                if (formattedDate.includes("15")) {
+                    const fullMidMonth = formattedDate.split(".")
 
+                    const midMonth = fullMidMonth[1] + "." + fullMidMonth[2]
+                    // console.log(midMonth);
+                    // props.funciton(midMonth)
+                    // props.onClickMonth(midMonth)
+                }
+            }
+            sendMonth()
+            // console.log(formattedDate);
             const dayActivities = activities.find(item => item.date === formattedDate);
             const dayActivityBank = activityBank.find(item => item.date === formattedDate);
-
+            // const dateActivity =props.month.find(item => item.date === formattedDate);
+            // console.log(activityBank);
             if (dayActivities || dayActivityBank) {
                 return (
-                    <div className="custom-tile-content">
-                        <div className="activity-marker"></div>
-                        <span>*</span>
+                    <div className={style.customTileContent}>
+                        <div className={style.activityMarker}></div>
+                        {/* <span>*</span> */}
                     </div>
                 );
             }
@@ -76,8 +91,11 @@ export default function Calendar(props, task) {
             <CalendarComp
                 onChange={onChange}
                 value={date}
+                locale="he"
                 onClickDay={onDayClick}
                 tileContent={tileContent}
+
+            // showNeighboringMonth
             />
         </div>
     );

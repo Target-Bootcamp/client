@@ -19,7 +19,7 @@ const Content = ({ style = {} }) => {
 
   return (
 
-    <div className={`${styles.content}  ${activety!=false ? styles.contentActive : styles.contentNoActive}`} style={style}>
+    <div className={`${styles.content}  ${activety ? styles.contentActive : styles.contentNoActive}`} style={style}>
       <MainTest />
       <Routes>
         <Route path='/' element={<Dashboard />} />
