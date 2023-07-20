@@ -1,9 +1,12 @@
 .sideNavActive{
     width: 15%;
     gap: 30px;
+    padding-top: 50px;
 }
 .sideNavNoActive{
     width: 25%;
+    gap: 90px;
+    padding-top: 70px;
 }
 .sideNav{
     background-color: var(--primary);
@@ -15,6 +18,5 @@
     padding-left: 5%;
     flex-direction: column;
     justify-content: start !important;
-    padding-top: 30px;
     overflow: hidden;
 }
