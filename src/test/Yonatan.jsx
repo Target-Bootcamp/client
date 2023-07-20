@@ -1,24 +1,31 @@
 import React, { useContext } from 'react'
-import FormAddEdit from '../components/FormAddEdit'
+import FormAddEdit from '../components/FormAddEditStudent'
 import { DataContext } from '../context'
 import Action from '../pages/Action'
 
 export default function Yonatan() {
-   const userToUpdate = {
-      name:"user",
-      lastName:"last name",
-      phone:"054444511",
-      email:"email",
-   }
+   const userToUpdate =  {
+      _id: "1",
+      userId: "123",
+      fName: 'Avi',
+      lName: "Sason",
+      phone: "0505477654",
+      email: "avi@gmail.com",
+      participantNum: 324,
+      comments: null,
+      permission: "student"
+   };
+
   
    const valueContext = useContext(DataContext)
    console.log(valueContext);
    return (
      
       <div>
-         <Action />
-{/* 
-        <FormAddEdit userToUpdate={userToUpdate}  />  */}
+         <button onClick={()=> valueContext.setPopUp( <FormAddEdit userToUpdate={userToUpdate}  /> )}>
+            click
+         </button>
+         <FormAddEdit /> 
       </div>
    )
 }
