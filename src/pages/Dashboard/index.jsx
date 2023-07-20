@@ -8,13 +8,25 @@ import Shay from '../../test/Shay';
 import styles from './style.module.css'
 import apiCalls from '../../functions/apiCalls';
 const Dashboard = () => {
+    function onclikDate(dateOne) {
+        console.log(dateOne);
+        apiCalls.get('/actions').then((res) => setDate(res))
+            .catch((err) => console.log(err))
+    }
+    function onclikMonth(monthOne) {
+        console.log(monthOne);
+        apiCalls.get('/actions').then((res) => setMonth(res))
+            .catch((err) => console.log(err))
+
+    }
     const data = useContext(DataContext)
-    const [date, setDate] = useState(new Date())
+    const [date, setDate] = useState([])
+    const [month, setMonth] = useState([])
     const [filterArr, setFilterArr] = useState([])
     const [len, setLen] = useState(3)
     // let len = 3
     useEffect(() => {
-        apiCalls.get('/actions')
+        apiCalls.get(`/actions/${len}`)
             .then((res) => setFilterArr(res))
             .catch((res) => console.log(res))
     }, [])
@@ -32,8 +44,8 @@ const Dashboard = () => {
             </div>
 
             <div className={styles.left}>
-                <div><Shay /></div>
-                <Cards action={filterArr} />
+                <div><Shay onclikDate={onclikDate} onclikMonth={onclikMonth} month={month} /></div>
+                <Cards action={date} />
             </div>
         </div>
 

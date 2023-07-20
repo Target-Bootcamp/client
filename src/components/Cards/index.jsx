@@ -7,14 +7,14 @@ export default function Cards(props) {
     { console.log(props.action) }
 
 
-    return <ul className={styles.listcard}> {props.action.map((i) => {
+    return <ul className={styles.listcard}> {props.map((i) => {
 
         return <Link ><li className={styles.card} key={Math.random()}><div className={styles.top}>
             <div className="w110">{i.name}</div><div>bla bla</div></div>
             <div className={styles.name}> {i.lecturer}</div>
             <div className={styles.bottun}>
                 <div>{`${props.action[0].endTime}-${props.action[0].startTime}`}</div>
-                {/* <div> {`${i.startDate.toLocaleDateString()}-${i.endDate.toLocaleDateString()}`}</div> */}
+                <div> {`${i.startDate.toLocaleDateString()??null}-${i.endDate.toLocaleDateString()??null}`}</div>
             </div>
 
 
