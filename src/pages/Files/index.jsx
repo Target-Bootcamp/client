@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 import styles from './style.module.css'
 import { DataContext } from '../../context';
 import Table from '../../components/Table';
-import PageHeader from '../../components/pageHeader';
+import PageHeader from '../../components/PageHeader';
 import Common from '../../components/Common';
 import EditFile from '../../components/EditFile.jsx';
 import apiCalls from '../../functions/apiCalls'
@@ -20,8 +20,7 @@ const Files = () => {
         .then((res)=>setFiles(res))
     .catch((error) => console.log(error))
     }
-        , [])
-    // myActions.length && console.log(myActions);
+    ,[])
     files.length && console.log(files);
 
     const handleAddition = () => data.setPopUp(<Common files={files} setFiles={setFiles} />)
