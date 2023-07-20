@@ -68,7 +68,7 @@
 .actionLocation div{
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     /* padding: 0 20px; */
 }
 .days{
@@ -87,7 +87,7 @@
 .mainLeft{
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 35%;
     height: 100%;
     gap: 50px;
 
