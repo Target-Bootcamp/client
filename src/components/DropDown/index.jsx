@@ -1,20 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './style.module.css';
-import {PiPencilLineDuotone} from 'react-icons/pi'
-import {AiFillDelete} from 'react-icons/ai'
-const DropdownButton = ({setSelect}) => {
-  // האם להציג תפריט בחירה או שלא
+
+const DropdownButton = ({ setSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
-  // לפה הולכת הבחירה 
-  const [selectedOption, setSelectedOption] = useState([]);
-  setSelect(selectedOption.value)
-  
+  const [selectedOption, setSelectedOption] = useState(null);
+
   const dropdownRef = useRef(null);
 
   const options = [
-    { id: 1, name: <PiPencilLineDuotone/>, value: 'edit' },
+    { id: 1, name: 'edit', value: 'edit' },
     { id: 2, name: 'action', value: 'action' },
-    { id: 3, name: <AiFillDelete/>, value: 'delete' }
+    { id: 3, name: 'delete', value: 'delete' }
   ];
 
   const handleToggle = () => {
@@ -34,7 +30,16 @@ const DropdownButton = ({setSelect}) => {
 
   useEffect(() => {
     document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
   }, []);
+
+  useEffect(() => {
+    if (selectedOption) {
+      setSelect(selectedOption.value);
+    }
+  }, [selectedOption, setSelect]);
 
   return (
     <div className={styles.dropdown} ref={dropdownRef}>

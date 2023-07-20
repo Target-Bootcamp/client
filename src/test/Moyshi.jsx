@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import DropDown from '../components/Template/DropDown'
+import DropDown from '../components/DropDown'
+import ForgotPasswordComponent from '../pages/ForgotPasswordComponent'
 
 export default function Moyshi() {
    const [a,setA] = useState()
@@ -7,6 +8,10 @@ export default function Moyshi() {
       console.log(a);
    },[a])
    return (
-      <div><DropDown setSelect={setA}/></div>
+      <div>
+         <DropDown setSelect={setA}/>
+         <ForgotPasswordComponent / >
+
+      </div>
    )
 }
