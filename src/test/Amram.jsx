@@ -1,7 +1,8 @@
 import React from 'react'
+import VerifyDelete from '../components/VerfityDelete'
 
 export default function Amram() {
    return (
-      <div>Amram</div>
+      <div> <VerifyDelete /> </div>
    )
 }
