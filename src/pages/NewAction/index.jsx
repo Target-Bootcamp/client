@@ -1,9 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import styles from './style.module.css'
-import {DataContext} from '../../context/index'
+import { DataContext } from '../../context/index'
 import Search from '../../components/Search';
 import SelectButtons from '../../components/selectButtons';
-const NewAction = ({}) => {
+import InputText from '../../components/InputText';
+import InputDate from '../../components/InputDate';
+import InputHours from '../../components/InputHours';
+const NewAction = ({ }) => {
     const action = {
         _id: "",
         orderSource: "",
@@ -20,60 +23,108 @@ const NewAction = ({}) => {
         actionType: '',
         name: "",
         files: [
-           {
-              fileName: "",
-              fileType: '',
-              size: "",
-              createdDate: null
-           }
+            {
+                fileName: "",
+                fileType: '',
+                size: "",
+                createdDate: null
+            }
         ],
         tasks: [
-           {
-              deadline: {},
-              details: "",
-              isDone: false,
-           }
+            {
+                deadline: {},
+                details: "",
+                isDone: false,
+            }
         ],
         users: [],
         schedules: [
-           {
-              date: {},
-              lecturer: "",
-              comments: "",
-              status: ""
-           }
+            {
+                date: {},
+                lecturer: "",
+                comments: "",
+                status: ""
+            }
         ]
     }
     const context = useContext(DataContext);
-    const [activety,setActivety] = useState(action)
-    const actArr = [{value:"סדנא",text:"סדנא"},{value:"קורס",text:"קורס"},{value:"מכינה",text:"מכינה"}]
+    const [activety, setActivety] = useState(action)
+    const statusArr = [{ value: "טרם בוצעה", text: "טרם בוצעה" }, { value: "נשלחה", text: "נשלחה" }, { value: "נחתמה", text: "נחתמה" }]
+    const typeArr = [{ value: "סדנא", text: "סדנא" }, { value: "קורס", text: "קורס" }, { value: "מכינה", text: "מכינה" }]
+    const locationArr = [{ value: "workshop", text: "בגוף המזמין" }, { value: "externally", text: "כיתה חיצונית" }]
+    const daysArr = [{ text: 'יום א', value: 1 }, { text: 'יום ב', value: 2 }, { text: 'יום ג', value: 3 }, { text: 'יום ד', value: 4 }, { text: 'יום ה', value: 5 }, { text: 'יום ו', value: 6 }]
 
-    useEffect(()=>{
-        context.setIsActive(true)
-    },[])
-    return (
-        <div className={`center ${styles.newAction}`} > 
-        <div className={`center ${styles.inputs}`}>
-            <Search placeholder={"גוף מזמין..."} data={"fundingSource"} />
-            <Search placeholder={"גוף מממן..."} data={"orderSource"} />
-        </div>
-        <div className={`center ${styles.actionButtons}`}>
-            <SelectButtons options={actArr}/>
-        </div>
 
+    useEffect(() => {
+        context.setCurrentAction(false)
+    }, [])
+
+  return (
+        <div className={`center scroller ${styles.newAction}`} >
+            <div className={`center ${styles.header}`}>
+                <h3>פעילות חדשה</h3>
+                <InputText />
+            </div>
+            <div className={`${styles.main}`} >
+                <div className={`${styles.mainRight}`}>
+                    <div className={`${styles.actionLocation}`}>
+                        <h4>סוג הפעילות</h4>
+                        <div>
+                        <   SelectButtons isSingleChoice={true} classN={"w110"} options={typeArr}/>
+
+                        </div>
+                    </div>
+                    <div className={`center ${styles.inputs}`}>
+                        <Search placeholder={"גוף מזמין..."} data={"fundingSource"} />
+                        <Search placeholder={"גוף מממן..."} data={"orderSource"} />
+                    </div>
+                    <div className={`${styles.actionLocation}`}>
+                        <h4>מיקום הפעילות</h4>
+                        <div>
+                            <SelectButtons isSingleChoice={true} classN={"w166"} options={locationArr}/>
+
+                        </div>
+                    </div>
+                    <div className={`${styles.days}`}>
+                        <h4>ימי לימוד</h4>
+                        <div>
+                            <SelectButtons isSingleChoice={false} classN={"w55"} options={daysArr}/>
+                        </div>
+
+                    </div>
+                </div>
+                {/* ------------------------------------------------------------------------ */}
+                <div className={`${styles.mainLeft}`}>
+                    <div className={`center ${styles.inputs}`}>
+                        <h4>שעות לימוד</h4>
+                        <InputHours/>
+                    </div>
+                    <div className={`${styles.inputs}`}>
+                        <h4>תאריכים</h4>
+                        <InputDate />
+                    </div>
+                    <div className={`${styles.actionLocation}`}>
+                        <h4>סטטוס הזמנה</h4>
+                        <div>
+                            <SelectButtons isSingleChoice={true} classN={"w110"} options={statusArr}/>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
 
 export default NewAction;
 // {
-//     _id: "null",
-//     orderSource: "עריית בני ברק",
-//     fundingSource: "משרד הכלכלה",
-//     location: "בני ברק",
-//     locationType: 1,
-//     days: [1, 5],
-//     startTime: "16:30",
+    //     _id: "null",
+    //     orderSource: "עריית בני ברק",
+    //     fundingSource: "משרד הכלכלה",
+    //     location: "בני ברק",
+    //     locationType: 1,
+    //     days: [1, 5],
+    //     startTime: "16:30",
 //     endTime: "21:30",
 //     startDate: new Date("01/01/2023"),
 //     endDate: new Date("01/08/2023"),

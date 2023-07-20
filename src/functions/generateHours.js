@@ -20,4 +20,4 @@ function generateHours() {
     return intervals;
 }
 
-export default {generateHours } 
+export default generateHours  

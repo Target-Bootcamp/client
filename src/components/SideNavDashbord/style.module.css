@@ -1,0 +1,32 @@
+.newActivetyButton{
+    width: 90%;
+    height: 70px;
+    font-size: 35px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 6px 10px 9px 0px rgba(15, 15, 15, 0.27);
+    cursor: pointer;
+    border: none;
+    border-radius: var(--radius);
+    background: var(--secondary);
+    color: var(--coverd);
+    gap: 8px;
+}
+.newActivetyButton span{
+    font-weight: 200;
+    font-size: 45px;
+}
+
+.newActivetyButton:hover{
+    box-shadow: none;
+}
+.taskToDo{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.taskToDo h4{
+    font-weight: 650;
+    text-align: start;
+}
