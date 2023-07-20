@@ -10,7 +10,7 @@ const action= Data.settings.actionType.find(v=>v.actionType===actionType);
         <div className={styles.header} style={style} {...props}>
 
            <h3 className={styles.pageName}> {pageName}</h3>
-           <h4 className={styles.actionType} style={{font:action.font, color:action.colors.secondary}}> {action. nameHebrew}</h4>
+           <h4 className={styles.actionType} style={{font:action?.font, color:action?.colors.secondary}}> {action?. nameHebrew}</h4>
         </div>
     )
 }

@@ -55,7 +55,7 @@ const NewAction = ({ }) => {
 
 
     useEffect(() => {
-        context.setIsActive(false)
+        context.setCurrentAction(false)
     }, [])
 
   return (
