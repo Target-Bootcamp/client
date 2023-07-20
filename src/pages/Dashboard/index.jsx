@@ -4,7 +4,7 @@ import { DataContext } from '../../context';
 const Dashboard = () => {
     const context = useContext(DataContext);
     useEffect(()=>{
-        context.setIsActive(false);        
+        context.setCurrentAction(false);        
     },[])
     return (
         <div>
