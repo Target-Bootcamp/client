@@ -17,7 +17,7 @@ export default function InputHours() {
     );
   });
 
-  console.log(filteredTimes);
+  // console.log(filteredTimes);
 
   function ChangeNumber(e) {
     setstart(e.target.value);

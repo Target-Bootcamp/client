@@ -9,8 +9,8 @@ const SideNav = ({style={}}) => {
     const activety = context.currentAction;
     
     return (
-        <div className={`center ${styles.sideNav} ${activety?styles.sideNavActive:styles.sideNavNoActive}`} style={style}>
-           {activety?<SideNavButtons/>:<SideNavDashbord/>}
+        <div className={`center ${styles.sideNav} ${activety!=false?styles.sideNavActive:styles.sideNavNoActive}`} style={style}>
+           {activety!=false?<SideNavButtons/>:<SideNavDashbord/>}
         </div>
     );
 }
