@@ -8,15 +8,16 @@ import Search from "../../components/Search";
 import InputHours from "../../components/InputHours";
 import InputDate from "../../components/InputDate";
 import apiCalls from "../../functions/apiCalls";
+import { useParams } from "react-router-dom";
 const Action = () => {
+  const parms = useParams()
   const context = useContext(DataContext);
   const [action, setAction] = useState({});
   useEffect(()=>{
-    apiCalls.get(`/actions/${context.CurrentAction}`)
+    apiCalls.get(`/actions/${parms.actionId}`)
     .then(v =>setAction(v))
     .catch(err=>console.log(err))
   },[])
-  console.log(action.status?action:"");
   // const [activety, setActivety] = useState(action);
   const statusArr = [{ value: "טרם בוצעה", text: "טרם בוצעה" }, { value: "נשלחה", text: "נשלחה" }, { value: "נחתמה", text: "נחתמה" }]
   const typeArr = [{ value: "סדנא", text: "סדנא" }, { value: "קורס", text: "קורס" }, { value: "מכינה", text: "מכינה" }]
@@ -24,7 +25,8 @@ const Action = () => {
   const daysArr = [{ text: 'יום א', value: 1 }, { text: 'יום ב', value: 2 }, { text: 'יום ג', value: 3 }, { text: 'יום ד', value: 4 }, { text: 'יום ה', value: 5 }, { text: 'יום ו', value: 6 }]
   return (
     <>
-      <div className={`center scroller ${styles.newAction}`} >
+        <CurrentAction/>
+        <div className={`center scroller ${styles.newAction}`} >
             <div className={`center ${styles.header}`}>
                 <h3>פעילות חדשה</h3>
                 <InputText />
