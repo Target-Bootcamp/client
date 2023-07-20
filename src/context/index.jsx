@@ -18,10 +18,10 @@ export default function MainContext({ children }) {
    const [users, setUsers] = useState(fakeData.users)
    const [settings, setSetings] = useState(settingsObj)
    const [popUp, setPopUp] = useState()
-   const [isActive, setIsActive] = useState(false)
+   const [currentAction, setCurrentAction] = useState()
 
    return (
-      <DataContext.Provider value={{ actions, setAction, users, setUsers, settings, setSetings, popUp, setPopUp, isActive, setIsActive }} >
+      <DataContext.Provider value={{ actions, setAction, users, setUsers, settings, setSetings, popUp, setPopUp,  currentAction, setCurrentAction }} >
          <>
 
             {children}

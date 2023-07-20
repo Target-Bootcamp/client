@@ -7,24 +7,14 @@ import PageHeader from '../../components/pageHeader';
 import Common from '../../components/Common';
 import EditFile from '../../components/EditFile.jsx';
 import apiCalls from '../../functions/apiCalls'
+import CurrentAction from "../../components/CurrentAction";
 
 const Files = () => {
     const params = useParams()
     const data = useContext(DataContext)
     const [myActions, setMyActions] = useState([])
     const [files, setFiles] = useState([])
-    useEffect(() => {
-//  TODO:
-//אם יש בקונטקסט קורס קיים, שליפת המידע של הכותרת ועוד דרך הקונטסט 
-// אם אין לעדכן את הקונטקסט
 
-        apiCalls.get(`/actions/${params.id}`)
-            .then(res => {
-                setMyActions(res)
-            })
-            .catch((error) => console.log(error))
-
-    }, [])
     useEffect(() => {
         apiCalls.get(`/actions/${params.id}/files`)
         .then((res)=>setFiles(res))
@@ -36,6 +26,8 @@ const Files = () => {
 
     const handleAddition = () => data.setPopUp(<Common files={files} setFiles={setFiles} />)
     return (
+        <>
+        <CurrentAction />
         <div>
             <PageHeader pageName={"הוספת קבצים"} actionType={myActions.actionType} />
             <div className={styles.files}>
@@ -46,6 +38,7 @@ const Files = () => {
                 {/* <Common stet={files} setStet={setFiles} /> */}
             </div>
         </div>
+        </>
     );
 }
 

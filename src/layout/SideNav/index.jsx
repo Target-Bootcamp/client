@@ -6,7 +6,7 @@ import SideNavDashbord from '../../components/SideNavDashbord';
 
 const SideNav = ({style={}}) => {
     const context = useContext(DataContext);
-    const activety = context.isActive;
+    const activety = context.currentAction;
     
     return (
         <div className={`center ${styles.sideNav} ${activety?styles.sideNavActive:styles.sideNavNoActive}`} style={style}>
