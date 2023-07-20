@@ -6,7 +6,7 @@ import styles from './style.module.css'
 // the days of studies which this choise is multiple
 // second click of each button will remove the choise
 
-export default function SelectButtons({ options, isSingleChoice, className }) {
+export default function SelectButtons({ options, isSingleChoice, classN }) {
     const [selected, setSelected] = useState([]);
 
     const handleClick = (v) => {
@@ -24,8 +24,7 @@ export default function SelectButtons({ options, isSingleChoice, className }) {
     return (
         <div>
             {options.map(v => {
-                return <button className={`${selected.includes(v.value) ? styles.activee : ""}
-                 ${styles.select} ${className}`} key={v.value}
+                return <button className={`${selected.includes(v.value) ? styles.activee : "" } ${styles.select} ${classN}`} key={v.value}
                     onClick={() => handleClick(v.value)} > {v.text} </button>
             })
             }
