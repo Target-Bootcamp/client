@@ -1,14 +1,13 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './style.module.css'
 import { useParams } from 'react-router-dom';
-import { DataContext } from '../../context/index'
 import PageHeader from '../../components/PageHeader'
 import Table from '../../components/Table'
 import Popup from '../../layout/Popup';
 import apiCalls from '../../functions/apiCalls'
 
 const Tasks = () => {
-    const context = useContext(DataContext);
+    const [context, setContext] = useState()
     const setActivety = context.setIsActive;
     useEffect(() => {
         setActivety(true)
@@ -16,7 +15,7 @@ const Tasks = () => {
 
     useEffect(() => {
         apiCalls.get('/actions')
-            .then(res => setCount(res))
+            .then(res => setContext(res))
             .catch(errow => console.log(errow))
 
     }, [])
@@ -25,9 +24,9 @@ const Tasks = () => {
 
 
     const params = useParams()
-    const allData = useContext(DataContext).actions.find(i => i._id === params.id)
+    const allData = context.find(i => i._id === params.id).tasks
     const arr = ["isDone", "details", "deadline", "editing"]
-    console.log(allData, "yyyuu");
+    console.log(allData);
 
     console.log(allData.tasks);
     return (
