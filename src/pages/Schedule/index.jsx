@@ -14,7 +14,7 @@ const Schedule = () => {
     return (
         <div className={`center ${styles.schedule}`}>
             schedule {params.id} page
-        </div>
+        </div>  
     );
 }
 
