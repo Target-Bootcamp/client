@@ -5,6 +5,7 @@ import { DataContext } from '../../context/index';
 import Table from '../../components/Table';
 import PageHeader from '../../components/PageHeader';
 import FormAddEditStudent from '../../components/FormAddEditStudent';
+import CurrentAction from '../../components/CurrentAction';
 import apiCalls from '../../functions/apiCalls';
 
 // creator : yonatan ben david
@@ -102,12 +103,14 @@ const Students = () => {
         const students = valueContext.users.filter(user => activity.users.includes(user.userId));
 
         return (
-            <div>
+            
+            <>
+      <CurrentAction /><div>
                 <div className={`${styles.students}`}>
                     <PageHeader actionType={activityType} pageName={"תלמידים"} />
                     <Table deletion={"del"} data={students} add={obj => valueContext.setPopUp(<FormAddEditStudent newStudent={newStudent} UpdateStudent={UpdateStudent} />)} editing={obj => valueContext.setPopUp(<FormAddEditStudent userToUpdate={obj} UpdateStudent={UpdateStudent} newStudent={newStudent} />)} />
                 </div>
-            </div>
+            </div></>
         );
     }
     else {

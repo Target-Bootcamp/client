@@ -137,6 +137,8 @@ let exsempol = [
 export default function Inon() {
    const data = useContext(DataContext);
    return (
-      <Accordion items={data.actions} />
+      <div>
+         <Accordion items={data.actions} />
+      </div>
    )
 }
