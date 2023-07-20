@@ -36,7 +36,7 @@ const Action = () => {
                     <div className={`${styles.actionType}`}>
                         <h4>סוג הפעילות</h4>
                         <div>
-                        <   SelectButtons  classN={"w94"} options={typeArr}/>
+                        <   SelectButtons isSingleChoice={true} classN={"w94"} options={typeArr}/>
 
                         </div>
                     </div>
@@ -47,7 +47,7 @@ const Action = () => {
                     <div className={`${styles.actionLocation}`}>
                         <h4>מיקום הפעילות</h4>
                         <div>
-                            <SelectButtons classN={"w166"} options={locationArr}/>
+                            <SelectButtons isSingleChoice={true} classN={"w166"} options={locationArr}/>
 
                         </div>
                     </div>
@@ -72,7 +72,7 @@ const Action = () => {
                     <div className={`${styles.actionLocation}`}>
                         <h4>סטטוס הזמנה</h4>
                         <div>
-                            <SelectButtons classN={"w110"} options={statusArr}/>
+                            <SelectButtons isSingleChoice={true} classN={"w110"} options={statusArr}/>
 
                         </div>
                     </div>

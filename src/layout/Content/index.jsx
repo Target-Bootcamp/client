@@ -20,7 +20,7 @@ const Content = ({ style = {} }) => {
   return (
 
     <div className={`${styles.content}  ${activety!=false ? styles.contentActive : styles.contentNoActive}`} style={style}>
-      {/* <MainTest /> */}
+      <MainTest />
       <Routes>
         <Route path='/' element={<Dashboard />} />
         {/* <Route path='/' element={<NewAction />} /> */}

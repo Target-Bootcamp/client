@@ -4,15 +4,14 @@ import Accordion from '../components/Accordion'
 import { DataContext } from '../context'
 import Login from '../pages/Login'
 import InputHours from '../components/InputHours'
+import Calendar from 'react-calendar'
 
 export default function Avraham() {
    const context = useContext(DataContext)
    return (
       <>
-         {/* <Accordion items={context.actions}/> */}
-         {/* avrhahm  */}
          {/* <Login/> */}
-         <InputHours/>
+         <Calendar/>
       </>
    )
 }

@@ -72,7 +72,7 @@ export default function Calendar(props, task) {
 
 
     return (
-        <div>
+        <div className={style.hiro}>
             <CalendarComp
                 onChange={onChange}
                 value={date}
