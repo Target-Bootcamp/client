@@ -22,13 +22,14 @@ const Tasks = () => {
         apiCalls.get(`/actions/${params.id}`)
             .then(res => setData(res))
             .catch(errow => console.log(errow))
-
     }, [])
+
     const arr = ["isDone", "details", "deadline", "editing"]
-    console.log(data);
+
     function Update(data) {
         context.setPopUp(<FromToTasks data={data} />)
     }
+
     return (
         // <div><PageHeader pageName={"משימות לביצוע"} /*actionType={data.actionType}*/ /> </div>
         <div className={`center ${styles.tasks}`}>
