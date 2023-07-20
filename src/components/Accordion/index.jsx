@@ -1,14 +1,16 @@
 import styles from './style.module.css'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import RadioCheckbox from '../RadioCheckbox'
-import Popup from "../../layout/Popup"
+import { DataContext } from '../../context';
 
 // props : 
 // creator: yinon ron
 // {/* <div className={styles} style={style} {...props}> */}
 
 const Accordion = ({ items, style = {}, ...props }) => {
+    const data = useContext(DataContext);
     const [toogel, settoogel] = useState(null)
+    data.s
     const handleToggle = (index) => {
         settoogel((prevToogel) => (prevToogel === index ? null : index))
     }
@@ -40,16 +42,16 @@ const Accordion = ({ items, style = {}, ...props }) => {
                         <div className={styles.bodyCard}>
                             {item.tasks.map((task, i) => (
                                 <div key={i}>
-                                    {task.isDone ? <div className={styles.done}>
-                                        {/* to do add function that updates the server with the new task status on componnt RadioCheckbox */}
-                                        <RadioCheckbox isDone={task.isDone} />{" " + task.details}</div> : <div className={styles.notDone}><RadioCheckbox isDone={task.isDone} /> {" " + task.details}</div>}
-                                    <div className={styles.subTaskDate} >{task.taskDueDate}</div>
+                                    {/* to do add function that updates the server with the new task status on componnt RadioCheckbox */}
+                                    <div className={task.isDone ? styles.done : styles.notDone}><RadioCheckbox task={task} isDone={task.isDone} />{" " + task.details}</div>
+                                    {/* TO DO  TaskDate*/}
+                                    {/* <div className={styles.subTaskDate} >{task.taskDueDate}</div> */}
                                 </div>
                             ))}
                             <div className={styles.addTaskBtnArea}>
-                                <div className={styles.addTaskBtn}>
+                                <div className={styles.addTaskBtn} onClick={() => data.setPopUp(<div>hello</div>)}>
                                     {/* to do add function onClick */}
-                                    <div className={styles.addTaskBtnIcon} >&#43;</div>
+                                    <div className={styles.addTaskBtnIcon}>&#43;</div>
                                     הוספת משימה
                                 </div>
                             </div>
