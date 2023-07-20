@@ -2,6 +2,7 @@ import styles from './style.module.css'
 import { BsTrash, BsFillPencilFill } from "react-icons/bs";
 import { useContext } from 'react';
 import { DataContext } from '../../context';
+import FormAddEdit from '../FormAddEditStudent';
 
 
 //props: An array of objects,Delete function
@@ -9,7 +10,7 @@ import { DataContext } from '../../context';
 //Whatever you want to be displayed to the provider as an array of course,
 //Task marking function
 
-export default function Table({ data, arr, deletion, editing, TaskMarking }) {
+export default function Table({ data, arr, deletion, editing, TaskMarking, add }) {
    const tata = useContext(DataContext)
    let obj = arr ?? Object.keys(data[0])
 
@@ -20,7 +21,7 @@ export default function Table({ data, arr, deletion, editing, TaskMarking }) {
                {
 
                   <button className={objeckt[key] ? styles.button : styles.checknun}
-                     onClick={() => TaskMarking(objeckt)}> </button>
+                 onClick={()=> TaskMarking={objeckt}} > </button>
                }
             </td> : objeckt[key] instanceof Date ? <td>{objeckt[key].toLocaleDateString()}</td>
                : <td>{objeckt[key]}</td>}</>
@@ -40,7 +41,7 @@ export default function Table({ data, arr, deletion, editing, TaskMarking }) {
          )}
          <tbody>
             <tr>
-               <td><button className={styles.addNwe} >+</button></td>
+               <td><button onClick={() => add()} className={styles.addNwe} >+</button></td>
             </tr>
          </tbody>
       </table>)

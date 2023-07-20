@@ -102,7 +102,7 @@ const NewAction = ({ }) => {
                         <h4>תאריכים</h4>
                         <InputDate />
                     </div>
-                    <div className={`center ${styles.actionLocation}`}>
+                    <div className={`${styles.actionLocation}`}>
                         <h4>סטטוס הזמנה</h4>
                         <div>
                             <SelectButtons classN={"w110"} options={statusArr}/>

@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import { DataContext } from '../../context';
 
 const Dashboard = () => {
+    const context = useContext(DataContext);
+    useEffect(()=>{
+        context.setIsActive(false);        
+    },[])
     return (
         <div>
             main page
