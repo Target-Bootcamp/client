@@ -10,15 +10,19 @@ import apiCalls from '../../functions/apiCalls';
 
 // creator : yonatan ben david
 const Students = () => {
+    const action = CurrentAction;
     const [arryStundent, setArryStundent] = useState([])
     const [data, setData] = useState()
+
+
     const params = useParams();
-    const param = params.id;
+    const param = params.actionId;
+    
     useEffect(() => {
         apiCalls.get(`/actions/${param}`)
             .then(res => {
                 setData(res);
-                console.log(data);
+                console.log("res", res);
             })
 
     }, [])
@@ -57,69 +61,65 @@ const Students = () => {
         return updateStudent
     }
 
-
     const valueContext = useContext(DataContext);
-
-    console.log(param);
-
     // data && console.log(data[0]._id);
-//     if (data) {
-//         const activityId = data.users.map(activity => activity);
-//         if (activityId) {
 
-//             activityId.map(student => {
-//                 apiCalls.get(`/users/${student}`)
-//                     .then(response =>setArryStundent(response))
-//                     .catch(error => console.log(error))
-//             })
-//             arryStundent.le && console.log("arry", arryStundent);
-//             return (
-//                 <div>
-//                     <div className={`${styles.students}`}>
-//                         {/* <PageHeader actionType={data.activityType} pageName={"תלמידים"} /> */}
-//                         <Table deletion={"del"} data={arryStundent} add={obj => valueContext.setPopUp(<FormAddEditStudent newStudent={newStudent} UpdateStudent={UpdateStudent} />)} editing={obj => valueContext.setPopUp(<FormAddEditStudent userToUpdate={obj} UpdateStudent={UpdateStudent} newStudent={newStudent} />)} />
-//                     </div>
-//                 </div>
-//             );
-//         }
-//         else {
-//             return (
-//                 <div className={styles.students}>
-//                     <h1>פעילות לא נמצאה</h1>
-//                 </div>
-//             )
+    // const activityId = data.users.map(activity => activity);
+    // if (activityId) {
+    //     activityId.map(student => {
+    //         apiCalls.get(`/users/${student}`)
+    //             .then(response => console.log(response))
+    //             .catch(error => console.log(error))
+    //     })
+    // // }
+    // arryStundent && console.log("arry", arryStundent);
+    return (
+        <div>
+            {!data ? <div className={`${styles.students}`}>
+                <div>work with data</div>
+                {/* <PageHeader actionType={data.activityType} pageName={"תלמידים"} /> */}
+                {/* <Table deletion={"del"} data={arryStundent} add={obj => valueContext.setPopUp(<FormAddEditStudent newStudent={newStudent} UpdateStudent={UpdateStudent} />)} editing={obj => valueContext.setPopUp(<FormAddEditStudent userToUpdate={obj} UpdateStudent={UpdateStudent} newStudent={newStudent} />)} /> */}
+            </div>
+                :
+                <div className={styles.students}>
+                    <h1>פעילות לא נמצאה</h1>
+                </div>}
 
-//         }
+        </div>
+    );
+}
+
+
 
 
 //         // apiCalls.get(`/users/${activityId}`)
 //     }
 // }
 
-    if (param >= 0 && param < valueContext.actions.length) {
-        const activity = valueContext.actions[param];
-        const activityType = activity.actionType;
-        // console.log(activityType);
-        const students = valueContext.users.filter(user => activity.users.includes(user.userId));
+//     if (param >= 0 && param < valueContext.actions.length) {
+//         const activity = valueContext.actions[param];
+//         const activityType = activity.actionType;
+//         // console.log(activityType);
+//         const students = valueContext.users.filter(user => activity.users.includes(user.userId));
 
-        return (
-            
-            <>
-      <CurrentAction /><div>
-                <div className={`${styles.students}`}>
-                    <PageHeader actionType={activityType} pageName={"תלמידים"} />
-                    <Table deletion={"del"} data={students} add={obj => valueContext.setPopUp(<FormAddEditStudent newStudent={newStudent} UpdateStudent={UpdateStudent} />)} editing={obj => valueContext.setPopUp(<FormAddEditStudent userToUpdate={obj} UpdateStudent={UpdateStudent} newStudent={newStudent} />)} />
-                </div>
-            </div></>
-        );
-    }
-    else {
-        return (
-            <div className={styles.students}>
-                <h1>פעילות לא נמצאה</h1>
-            </div>
-        )
-    }
-}
+//         return (
+
+//             <>
+//       <CurrentAction /><div>
+//                 <div className={`${styles.students}`}>
+//                     <PageHeader actionType={activityType} pageName={"תלמידים"} />
+//                     <Table deletion={"del"} data={students} add={obj => valueContext.setPopUp(<FormAddEditStudent newStudent={newStudent} UpdateStudent={UpdateStudent} />)} editing={obj => valueContext.setPopUp(<FormAddEditStudent userToUpdate={obj} UpdateStudent={UpdateStudent} newStudent={newStudent} />)} />
+//                 </div>
+//             </div></>
+//         );
+//     }
+//     else {
+//         return (
+//             <div className={styles.students}>
+//                 <h1>פעילות לא נמצאה</h1>
+//             </div>
+//         )
+//     }
+// }
 
 export default Students;
