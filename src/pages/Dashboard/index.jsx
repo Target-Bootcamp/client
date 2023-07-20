@@ -26,12 +26,16 @@ const Dashboard = () => {
     const [len, setLen] = useState(3)
     // let len = 3
     useEffect(() => {
-        apiCalls.get(`/actions/${len}`)
+        apiCalls.get(`/actions/`, len)
             .then((res) => setFilterArr(res))
             .catch((res) => console.log(res))
+                
     }, [])
+    console.log(filterArr.forEach((i) => console.log(i.schedules )))
+
     // for (let i = 0; i < len; i++) {
-    //     // setFilterArr([])
+    //     // setFilterArr([])npm start
+
     //     filterArr.push(data.actions[i])
     // }
     return (<>
@@ -40,9 +44,12 @@ const Dashboard = () => {
             <div className={styles.right}>
                 <h3 className='h1'>פעילויות נוכחיות</h3>
                 <Cards action={filterArr} />
-                <button className='w244' onClick={() => setLen(len + 3)}>פעילויות נוספות </button>
+                <button className='w244' onClick={() => {
+                    apiCalls.get(`/actions/`, len).then((res) => setFilterArr(res))
+                        .catch((err) => console.log(err))
+                }}>פעילויות נוספות </button>
             </div>
-
+            
             <div className={styles.left}>
                 <div><Shay onclikDate={onclikDate} onclikMonth={onclikMonth} month={month} /></div>
                 <Cards action={date} />
