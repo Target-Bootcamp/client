@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styles from './style.module.css';
 
 const isValidEmail = (email) => {
@@ -10,6 +10,20 @@ const ForgotPasswordComponent = ({ setSelect }) => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const [showForm, setShowForm] = useState(false);
+  const formRef = useRef(null);
+
+  const handleClickOutside = (e) => {
+    if (!formRef.current.contains(e.target) && e.target.id !== 'buttt') {
+      setShowForm(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
 
   const sendResetPasswordEmail = async () => {
     try {
@@ -19,7 +33,6 @@ const ForgotPasswordComponent = ({ setSelect }) => {
         setError('כתובת דוא"ל לא חוקית');
         return;
       }
-
       setError('');
       setShowForm(false);
 
@@ -40,9 +53,9 @@ const ForgotPasswordComponent = ({ setSelect }) => {
     }
   };
 
-  const handleShowForm = () => {
+  const handleToggleForm = () => {
     setError('');
-    setShowForm(true);
+    setShowForm(!showForm);
   };
 
   const handleSubmit = (e) => {
@@ -53,12 +66,12 @@ const ForgotPasswordComponent = ({ setSelect }) => {
   return (
     <div className={styles.forgotPassword}>
       {!showForm ? (
-        <button className={styles.forgotPasswordButton} onClick={handleShowForm}>
+        <button id="buttt" className={styles.forgotPasswordButton} onClick={handleToggleForm}>
           שכחת סיסמא ?
         </button>
       ) : (
-        <>
-          <h1>שכחת סיסמא ?</h1>
+        <div ref={formRef}>
+          <h1>שכחת סיסמה?</h1>
           <p>נא הזן את כתובת הדוא"ל שלך ונשלח לך קישור לאיפוס הסיסמה.</p>
           <form onSubmit={handleSubmit}>
             <input
@@ -70,7 +83,7 @@ const ForgotPasswordComponent = ({ setSelect }) => {
             <input type="submit" value="שלח" />
           </form>
           {error && <p className={styles.error}>{error}</p>}
-        </>
+        </div>
       )}
     </div>
   );
