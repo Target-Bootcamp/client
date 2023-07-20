@@ -5,6 +5,7 @@ import Search from '../../components/Search';
 import SelectButtons from '../../components/selectButtons';
 import InputText from '../../components/InputText';
 import InputDate from '../../components/InputDate';
+import InputHours from '../../components/InputHours';
 const NewAction = ({ }) => {
     const action = {
         _id: "",
@@ -96,7 +97,7 @@ const NewAction = ({ }) => {
                 <div className={`${styles.mainLeft}`}>
                     <div className={`center ${styles.inputs}`}>
                         <h4>שעות לימוד</h4>
-                        overs input
+                        <InputHours/>
                     </div>
                     <div className={`${styles.inputs}`}>
                         <h4>תאריכים</h4>

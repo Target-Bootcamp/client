@@ -5,7 +5,9 @@ const Action = () => {
   return (
     <>
       <CurrentAction />
-      <div className={` ${styles.action}`}>action</div>
+      <div className={`${styles.action}`}>
+          dsfdsfds
+      </div>
     </>
   );
 };
