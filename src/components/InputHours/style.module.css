@@ -1,0 +1,18 @@
+.container{
+display: flex;
+height: 20px;
+
+}
+.fader{
+display: flex;
+padding: 100px;
+}
+.fader.study{
+    font-size:xx-large
+}
+
+
+
+
+
+

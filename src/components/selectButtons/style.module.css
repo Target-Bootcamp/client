@@ -1,0 +1,29 @@
+.select {
+    background-color: white;
+    display: inline;    
+    justify-content: center;
+    /* width: fit-content; */
+    /* height: 30px; */
+    /* border-radius: 40px; */
+    box-shadow: 4px 4px 21px -5px rgba(0,0,0,0.37);
+    /* border: 0; */
+    transition: 0.3s;
+}
+.select:hover {
+    box-shadow: none;
+    transition: 0.3s;
+}
+.container {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    grid-gap: 15px;
+}
+
+.activee{
+    background-color: rgb(140, 184, 226) !important;
+
+}
+.overr {
+    background-color: cyan;
+}

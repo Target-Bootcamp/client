@@ -1,13 +1,13 @@
-import React from 'react';
-import styles from './style.module.css'
-import { useParams } from 'react-router';
+import React, { useContext, useEffect, useState } from "react";
+import styles from "./style.module.css";
+import CurrentAction from "../../components/CurrentAction";
 const Action = () => {
-    const params = useParams()
-    return (
-        <div className={`center ${styles.action}`}>
-            action {params.id} page
-        </div>
-    );
-}
+  return (
+    <>
+      <CurrentAction />
+      <div className={` ${styles.action}`}>action</div>
+    </>
+  );
+};
 
 export default Action;

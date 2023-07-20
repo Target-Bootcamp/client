@@ -1,0 +1,15 @@
+.name {
+    /* margin-top: 20%;
+    margin-right: 20%; */
+    border-radius: 15px;
+    width: 376px;
+    height: 38px;
+    /* box-shadow: 1px 1px 17px 7px rgba(94,107,96,0.48); */
+    text-align:right;
+    border-color: aliceblue;
+    outline: none;
+    border: none;
+    box-shadow: 0px 4px 20px 0px #0000001A;
+    font-size: 20px;
+    padding: 15px;
+}

@@ -1,0 +1,79 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff8e;
+
+    box-shadow: 0px 4px 30px 0px #0000001A;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+    min-height: 60px;
+    text-align: start;
+}
+
+.headCard {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    cursor: pointer;
+}
+
+.headCardRight {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.headCardLeft {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.bodyCard {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 10px 0px;
+    gap: 10px;
+}
+
+.subTaskDate {
+    display: none;
+}
+
+.subTaskDate:hover {
+    display: block;
+
+}
+
+.done {
+    text-decoration: line-through
+}
+
+.notDone {
+    text-decoration: none
+}
+
+
+.addTaskBtnArea {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+
+}
+
+.addTaskBtn {
+    display: flex;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.addTaskBtnIcon {
+    background-color: white;
+    border-radius: 100px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}

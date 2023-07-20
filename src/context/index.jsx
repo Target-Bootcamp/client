@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { createContext } from "react"
 import fakeData from '../data/fakeData'
+import Popup from "../layout/Popup"
 
 export const DataContext = createContext({})
 
@@ -13,16 +14,22 @@ export default function MainContext({ children }) {
       fundingSource: fakeData.fundingSource,
       orderSource: fakeData.orderSource
    }
-
    const [actions, setAction] = useState(fakeData.actions)
    const [users, setUsers] = useState(fakeData.users)
    const [settings, setSetings] = useState(settingsObj)
-
+   const [popUp, setPopUp] = useState()
+   const [currentAction, setCurrentAction] = useState()
 
    return (
-      <DataContext.Provider value={{ actions, setAction, users, setUsers, settings, setSetings }} >
-         {/* // <DataContext.Provider value={{ actions:[actions, setAction], [users, setUsers], [settingData, setSetingData] }} > */}
-         <>{children}</>
+      <DataContext.Provider value={{ actions, setAction, users, setUsers, settings, setSetings, popUp, setPopUp,  currentAction, setCurrentAction }} >
+         <>
+
+            {children}
+
+            {popUp && <Popup />}
+
+         </>
+
       </DataContext.Provider>
    )
 }

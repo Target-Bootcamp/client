@@ -1,0 +1,17 @@
+.header{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    font-weight: 800;
+    padding: 0px 20px;
+    width: 90%;
+}
+
+.header h4{
+font-weight: 800;}
+
+.header h3{
+    font-weight: 800;  
+}
