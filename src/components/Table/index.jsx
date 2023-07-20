@@ -1,5 +1,6 @@
 import styles from './style.module.css'
-import { BsTrash, BsFillPencilFill } from "react-icons/bs";
+import {MdOutlineDelete  } from "react-icons/md";
+import { CiEdit } from "react-icons/ci";
 import { useContext } from 'react';
 import { DataContext } from '../../context';
 import FormAddEdit from '../FormAddEditStudent';
@@ -27,9 +28,9 @@ export default function Table({ data, arr, deletion, editing, TaskMarking, add }
                : <td>{objeckt[key]}</td>}</>
 
       })}  {deletion ? <td><button onClick={() => deletion(objeckt)}>
-         <BsTrash className={styles.icons} /></button></td> : null}
+         <MdOutlineDelete className={styles.icons} /></button></td> : null}
          {editing ? <td><button onClick={() => editing(objeckt)}>
-            <BsFillPencilFill className={styles.icons} /></button></td> : null}
+            <CiEdit className={styles.icons} /></button></td> : null}
       </tr>
    }
 
