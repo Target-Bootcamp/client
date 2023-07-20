@@ -15,8 +15,8 @@ const Accordion = ({ items, style = {}, ...props }) => {
     return (
         <div>
             {items.map((item, index) => (
-                <div key={index} className={styles.card} onClick={() => handleToggle(index)}>
-                    <div className={styles.headCard}>
+                <div key={index} className={styles.card} >
+                    <div className={styles.headCard} onClick={() => handleToggle(index)}>
                         <div className={styles.headCardRight}>
                             <div>{item.actionType}</div>
                             <div>{item.orderSource}</div>
