@@ -1,20 +1,18 @@
-import React, { useState } from 'react';
-import Common from '../components/Common';
+import React, { useContext, useState } from 'react'
+import PageHeader from '../components/pageHeader'
+import { DataContext } from '../context'
+import Files from '../pages/Files'
+import Common from '../components/Common'
 
 export default function Zvi() {
-   const[file,setFile]=useState([]);
-   // function hndleFrom(e){
-   //    e.preventDefault();
-   //    const file=e.target.myfile.value;
-   //    console.log(file);
-   // }
+   const context =useContext(DataContext)
+const [files,setFiles]=useState([])
    return (
-      <div>
-      <form>
-
-         <Common stet={file} setStet={setFile}/>
-         </form>
-         {console.log(file)}
+      <div >
+<button onClick={()=>context.setPopUp(<div>gshbghsdfhb</div>)}>+</button>
+         {/* <Files/> */}
+         {/* <PageHeader pageName={"תלמידים"} actionType={"workshop"}/> */}
+         {/* <Common stet={files} setStet={setFiles}/> */}
       </div>
    )
 }
