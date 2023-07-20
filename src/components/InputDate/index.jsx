@@ -14,7 +14,7 @@ function InputDate({ style = {}, startDate, endDate, setStartDate, setEndDate, .
 
   return (
     <div className={styles.wrapper} style={style} {...props}>
-      <div className={styles.dateBox}>
+      <div className={`date ${styles.dateBox}`}>
         <label className={styles.text}>תאריך התחלה</label>
         <input
           type="date"
@@ -30,7 +30,7 @@ function InputDate({ style = {}, startDate, endDate, setStartDate, setEndDate, .
           }}
         />
       </div>
-      <div className={styles.dateBox}>
+      <div className={`date ${styles.dateBox}`}>
         <label className={styles.text}>תאריך סיום</label>
         <input
           type="date"

@@ -1,0 +1,12 @@
+.customTileContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.activityMarker {
+    width: 1vw;
+    height: 1vh;
+    background-color: rgb(45, 179, 196);
+    border-radius: 50%;
+}

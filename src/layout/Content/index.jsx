@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import styles from './style.module.css'
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useParams } from 'react-router-dom';
 // pages
 import Action from '../../pages/Action';
 import NewAction from '../../pages/NewAction';
@@ -12,10 +12,10 @@ import Dashboard from '../../pages/Dashboard'
 import { DataContext } from '../../context/index'
 import MainTest from '../../test'
 const Content = ({ style = {} }) => {
+  const param = useParams()
   const context = useContext(DataContext);
-  const activety = context.isActive
-  const setActivety = context.setIsActive
-
+  const activety = context.currentAction;
+  const setActivety = context.setCurrentAction;
 
   return (
 
@@ -23,12 +23,13 @@ const Content = ({ style = {} }) => {
       <MainTest />
       <Routes>
         <Route path='/' element={<Dashboard />} />
+        {/* <Route path='/' element={<NewAction />} /> */}
         <Route path='/action' element={<NewAction />} />
-        <Route path='/action/:id' element={<Action />} />
-        <Route path='/action/:id/files' element={<Files />} />
-        <Route path='/action/:id/students' element={<Students />} />
-        <Route path='/action/:id/schedule' element={<Schedule />} />
-        <Route path='/action/:id/tasks' element={<Tasks />} />
+        <Route path='/action/:actionId' element={<Action />} />
+        <Route path='/action/:actionId/files' element={<Files />} />
+        <Route path='/action/:actionId/students' element={<Students />} />
+        <Route path='/action/:actionId/schedule' element={<Schedule />} />
+        <Route path='/action/:actionId/tasks' element={<Tasks />} />
       </Routes>
     </div>
   );

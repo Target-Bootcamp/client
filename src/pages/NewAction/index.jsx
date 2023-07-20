@@ -5,6 +5,7 @@ import Search from '../../components/Search';
 import SelectButtons from '../../components/selectButtons';
 import InputText from '../../components/InputText';
 import InputDate from '../../components/InputDate';
+import InputHours from '../../components/InputHours';
 const NewAction = ({ }) => {
     const action = {
         _id: "",
@@ -55,7 +56,7 @@ const NewAction = ({ }) => {
 
 
     useEffect(() => {
-        context.setIsActive(true)
+        context.setCurrentAction(false)
     }, [])
 
   return (
@@ -66,10 +67,10 @@ const NewAction = ({ }) => {
             </div>
             <div className={`${styles.main}`} >
                 <div className={`${styles.mainRight}`}>
-                    <div className={`${styles.actionType}`}>
+                    <div className={`${styles.actionLocation}`}>
                         <h4>סוג הפעילות</h4>
                         <div>
-                        <   SelectButtons classN={"w94"} options={typeArr}/>
+                        <   SelectButtons isSingleChoice={true} classN={"w110"} options={typeArr}/>
 
                         </div>
                     </div>
@@ -80,14 +81,14 @@ const NewAction = ({ }) => {
                     <div className={`${styles.actionLocation}`}>
                         <h4>מיקום הפעילות</h4>
                         <div>
-                            <SelectButtons classN={"w166"} options={locationArr}/>
+                            <SelectButtons isSingleChoice={true} classN={"w166"} options={locationArr}/>
 
                         </div>
                     </div>
                     <div className={`${styles.days}`}>
                         <h4>ימי לימוד</h4>
                         <div>
-                            <SelectButtons classN={"w55"} options={daysArr}/>
+                            <SelectButtons isSingleChoice={false} classN={"w55"} options={daysArr}/>
                         </div>
 
                     </div>
@@ -96,16 +97,16 @@ const NewAction = ({ }) => {
                 <div className={`${styles.mainLeft}`}>
                     <div className={`center ${styles.inputs}`}>
                         <h4>שעות לימוד</h4>
-                        overs input
+                        <InputHours/>
                     </div>
-                    <div className={`center ${styles.inputs}`}>
+                    <div className={`${styles.inputs}`}>
                         <h4>תאריכים</h4>
                         <InputDate />
                     </div>
-                    <div className={`center ${styles.actionLocation}`}>
+                    <div className={`${styles.actionLocation}`}>
                         <h4>סטטוס הזמנה</h4>
                         <div>
-                            <SelectButtons classN={"w110"} options={statusArr}/>
+                            <SelectButtons isSingleChoice={true} classN={"w110"} options={statusArr}/>
 
                         </div>
                     </div>

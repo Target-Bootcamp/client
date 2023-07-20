@@ -5,9 +5,12 @@ import Content from '../Content';
 import { DataContext } from '../../context/index'
 import Popup from '../Popup';
 
+
 const MainLayout = () => {
     const context = useContext(DataContext);
-    const setActivety = context.setIsActive;
+    const setActivety = context.setCurrentAction;
+
+
 
     useEffect(() => {
         window.location.pathname === "/" ? setActivety(false) : "";
