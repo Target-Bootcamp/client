@@ -5,7 +5,7 @@ import apiCalls from '../functions/apiCalls';
 
 export default function Sagi() {
    useEffect(() => {
-      apiCalls.get('/actions')
+      apiCalls.get('/actions/64b7a473e400aa13afad6e78')
          .then(console.table)
          .catch(console.warn)
 
