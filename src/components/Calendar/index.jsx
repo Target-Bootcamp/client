@@ -94,8 +94,6 @@ export default function Calendar(props, task) {
                 locale="he"
                 onClickDay={onDayClick}
                 tileContent={tileContent}
-
-            // showNeighboringMonth
             />
         </div>
     );

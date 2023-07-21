@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { DataContext } from '../../context';
 import styles from "./style.module.css";
+import Calendar from '../../components/Calendar';
 
 const Dashboard = () => {
     const context = useContext(DataContext);
@@ -13,7 +14,9 @@ const Dashboard = () => {
                 dsf
             </div>
             <div className={styles.leftDiv}>
-                <div className={`${styles}`}></div>
+                <div className={`${styles.calendar}`}>
+                    <Calendar/>
+                </div>
             </div>
         </div>
     );
