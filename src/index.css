@@ -177,17 +177,31 @@ h4 {
    border: none;
  }
 
+ .start  {
+   display: flex ;
+   flex-direction: column;
+   margin-right: 45px;
+   margin-bottom: 2.5em;
+ }
+
 .tw {
    display: flex;
    align-items: center;
    justify-content: center;
    flex-direction: column;
-   
+   position: relative;
    max-width: 1000px;
    width: 100%;
    border-radius: 20px;
    background: var(--silver2);
 }
+
+.alignSelf{
+   align-self: self-end;
+   position: absolute;
+   left: 32px;
+}
+
 
 .scroller {
    overflow-y: scroll;

@@ -67,7 +67,7 @@ const Students = () => {
     return (
         <div>
             <CurrentAction />
-            <div>
+            <div className={styles.container}>
 
 
                 {data ? <div className={`${styles.students}`}>
@@ -76,7 +76,7 @@ const Students = () => {
                     </div>
                     <div className='start'>
                         <InputText placeholder={"example"} /><br />
-                        <InputText />
+                        <InputText  placeholder={"example2"} />
                     </div>
 
                     <div className='center'>

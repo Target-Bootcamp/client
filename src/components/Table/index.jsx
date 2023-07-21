@@ -1,6 +1,7 @@
 import styles from './style.module.css'
 import {MdOutlineDelete  } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
+import { IoIosAddCircleOutline } from "react-icons/Io";
 import { useContext } from 'react';
 import { DataContext } from '../../context';
 import FormAddEdit from '../FormAddEditStudent';
@@ -42,7 +43,7 @@ export default function Table({ data, arr, deletion, editing, TaskMarking, add }
          )}
          <tbody>
             <tr>
-               <td><button onClick={() => add()} className={styles.addNwe} >+</button></td>
+               <td className='alignSelf'><button onClick={() => add()} ><IoIosAddCircleOutline className={styles.icons} /></button></td>
             </tr>
          </tbody>
       </table>)
