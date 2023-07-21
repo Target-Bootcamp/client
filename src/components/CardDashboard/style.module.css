@@ -1,0 +1,34 @@
+.card{
+    background: red;
+    /* background: var(--silver2); */
+    width: 542px;
+    height: 142px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    justify-content: space-around;
+
+}
+.card>div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+.badge{
+    background-color: blue;
+    border-radius: 20px;
+    width: 20%;
+}
+.dotts{
+    width: 30px;
+    border-radius: 100% ;
+    background-color: aqua;
+}
+.name{
+    justify-content: start !important;
+}
+.name span{
+    font-size: 20px;    
+}
