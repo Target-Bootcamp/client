@@ -6,49 +6,51 @@ import SelectButtons from '../../components/selectButtons';
 import InputText from '../../components/InputText';
 import InputDate from '../../components/InputDate';
 import InputHours from '../../components/InputHours';
-// const NewAction = ({hedline,actuonType,orderSource,fundingSource}) => {
+
 const Test = (props) => {
-    const action = {
-        _id: "",
-        orderSource: "",
-        fundingSource: "",
-        location: "",
-        locationType: 0,
-        days: [],
-        startTime: "",
-        endTime: "",
-        startDate: {},
-        endDate: {},
-        status: 0,
-        lecturer: "",
-        actionType: '',
-        name: "",
-        files: [
-            {
-                fileName: "",
-                fileType: '',
-                size: "",
-                createdDate: null
-            }
-        ],
-        tasks: [
-            {
-                deadline: {},
-                details: "",
-                isDone: false,
-            }
-        ],
-        users: [],
-        schedules: [
-            {
-                date: {},
-                lecturer: "",
-                comments: "",
-                status: ""
-            }
-        ]
-    }
+    // const action = {
+    //     _id: "",
+    //     orderSource: "",
+    //     fundingSource: "",
+    //     location: "",
+    //     locationType: 0,
+    //     days: [],
+    //     startTime: "",
+    //     endTime: "",
+    //     startDate: {},
+    //     endDate: {},
+    //     status: 0,
+    //     lecturer: "",
+    //     actionType: '',
+    //     name: "",
+    //     files: [
+    //         {
+    //             fileName: "",
+    //             fileType: '',
+    //             size: "",
+    //             createdDate: null
+    //         }
+    //     ],
+    //     tasks: [
+    //         {
+    //             deadline: {},
+    //             details: "",
+    //             isDone: false,
+    //         }
+    //     ],
+    //     users: [],
+    //     schedules: [
+    //         {
+    //             date: {},
+    //             lecturer: "",
+    //             comments: "",
+    //             status: ""
+    //         }
+    //     ]
+    // }
+
     const context = useContext(DataContext);
+    const action = context.currentAction
     const [activety, setActivety] = useState(action)
     const statusArr = [{ value: "טרם בוצעה", text: "טרם בוצעה" }, { value: "נשלחה", text: "נשלחה" }, { value: "נחתמה", text: "נחתמה" }]
     const typeArr = [{ value: "סדנא", text: "סדנא" }, { value: "קורס", text: "קורס" }, { value: "מכינה", text: "מכינה" }]
