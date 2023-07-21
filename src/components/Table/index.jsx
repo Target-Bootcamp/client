@@ -12,18 +12,18 @@ import FormAddEdit from '../FormAddEditStudent';
 //Whatever you want to be displayed to the provider as an array of course,
 //Task marking function
 
-export default function Table({ data, arr, deletion, editing, TaskMarking, add }) {
+export default function Table({ data = [], arr, deletion, editing, TaskMarking, add }) {
    const tata = useContext(DataContext)
    let obj = arr ?? Object.keys(data[0])
 
    function tempFunck(objeckt) {
-      return <tr > {obj.map(key => {
+      return <tr> {obj.map(key => {
          return <>
-            {key === "isDone" ? <td >
+            {key === "isDone" ? <td>
                {
 
                   <button className={objeckt[key] ? styles.button : styles.checknun}
-                 onClick={()=> TaskMarking={objeckt}} > </button>
+                     onClick={() => TaskMarking = { objeckt }} > </button>
                }
             </td> : objeckt[key] instanceof Date ? <td>{objeckt[key].toLocaleDateString()}</td>
                : <td>{objeckt[key]}</td>}</>
