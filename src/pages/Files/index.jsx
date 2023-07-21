@@ -5,7 +5,7 @@ import { DataContext } from '../../context';
 import Table from '../../components/Table';
 import PageHeader from '../../components/PageHeader';
 import Common from '../../components/Common';
-import EditFile from '../../components/EditFile.jsx';
+import EditFile from '../../components/EditFile/index.jsx';
 import apiCalls from '../../functions/apiCalls'
 import CurrentAction from "../../components/CurrentAction";
 
