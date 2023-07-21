@@ -8,10 +8,10 @@ import { useState } from 'react'
 export default function InputText({ style = {}, type , name, placeholder,
     defaultValue, onChange, ref }) {
 
-        
+
     return (
             
-        <input className={styles.name} style={style} ref
+        <input className={styles.name} style={style} ref={ref}
             type={type} defaultValue={defaultValue} placeholder={placeholder}
             name={name} onChange={onChange} />
 

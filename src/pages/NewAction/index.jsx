@@ -6,7 +6,7 @@ import SelectButtons from '../../components/selectButtons';
 import InputText from '../../components/InputText';
 import InputDate from '../../components/InputDate';
 import InputHours from '../../components/InputHours';
-const NewAction = ({ }) => {
+const NewAction = () => {
     const action = {
         _id: "",
         orderSource: "",
@@ -63,14 +63,14 @@ const NewAction = ({ }) => {
         <div className={`center scroller ${styles.newAction}`} >
             <div className={`center ${styles.header}`}>
                 <h3>פעילות חדשה</h3>
-                <InputText />
+                <InputText/>
             </div>
             <div className={`${styles.main}`} >
                 <div className={`${styles.mainRight}`}>
                     <div className={`${styles.actionLocation}`}>
                         <h4>סוג הפעילות</h4>
                         <div>
-                        <   SelectButtons isSingleChoice={true} classN={"w110"} options={typeArr}/>
+                        <   SelectButtons  isSingleChoice={true} classN={"w110"} options={typeArr}/>
 
                         </div>
                     </div>

@@ -12,13 +12,17 @@ import NewAction from '../pages/NewAction'
 
 export default function Avraham() {
    const context = useContext(DataContext)
+   const props = {
+
+   }
    return (
       <>
          {/* <Login/> */}
          {/* <Calendar/> */}
          {/* <CardDashboard/> */}
          {/* <NewAction/> */}
-         <Test/>
+
+         <Test />
       </>
    )
 }
