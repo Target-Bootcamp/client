@@ -59,7 +59,10 @@ const Students = () => {
 
         }
         console.log("student to update: ", updateStudent);
-        return updateStudent
+        apiCalls.put(`/student/${updateStudent._id}`, updateStudent)
+            .then((response => console.log(response)))
+
+
     }
 
     const valueContext = useContext(DataContext);
@@ -76,7 +79,7 @@ const Students = () => {
                     </div>
                     <div className='start'>
                         <InputText placeholder={"example"} /><br />
-                        <InputText  placeholder={"example2"} />
+                        <InputText placeholder={"example2"} />
                     </div>
 
                     <div className='center'>

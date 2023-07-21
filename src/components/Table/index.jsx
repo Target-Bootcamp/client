@@ -31,7 +31,7 @@ export default function Table({ data = [], arr, deletion, editing, TaskMarking, 
       })}  {deletion ? <td><button onClick={() => deletion(objeckt)}>
          <MdOutlineDelete className={styles.icons} /></button></td> : null}
          {editing ? <td><button onClick={() => editing(objeckt)}>
-            <CiEdit className={styles.icons} /></button></td> : null}
+            <CiEdit className={`${styles.icons}`} /></button></td> : null}
       </tr>
    }
 
@@ -43,7 +43,7 @@ export default function Table({ data = [], arr, deletion, editing, TaskMarking, 
          )}
          <tbody>
             <tr>
-               <td className='alignSelf'><button onClick={() => add()} ><IoIosAddCircleOutline className={styles.icons} /></button></td>
+               <td className='alignSelf'><button onClick={() => add()} ><IoIosAddCircleOutline className={styles.iconAddStudent} /></button></td>
             </tr>
          </tbody>
       </table>)
