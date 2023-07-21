@@ -6,20 +6,20 @@ import styles from './style.module.css'
 // the days of studies which this choise is multiple
 // second click of each button will remove the choise
 
-export default function SelectButtons({ options, isSingleChoice, classN }) {
+export default function SelectButtons({ current,options, isSingleChoice, classN }) {
+    useEffect(()=>{
+        setSelected( current? current:[])
+    },[])
     const [selected, setSelected] = useState([]);
-
     const handleClick = (v) => {
-
         setSelected(
             selected.includes(v) ?
-                selected.filter(s => s != v)
-                : (isSingleChoice ? [v] : [...selected, v]))
+                selected.filter(s => s != v):(isSingleChoice ? [v] : [...selected, v]))
     }
 
-    useEffect(() => {
-        console.log(selected);
-    }, [selected])
+    // useEffect(() => {
+    //     console.log(selected);
+    // }, [selected])
 
     return (
         <div>

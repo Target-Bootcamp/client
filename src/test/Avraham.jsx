@@ -6,6 +6,9 @@ import Login from '../pages/Login'
 import InputHours from '../components/InputHours'
 import Calendar from 'react-calendar'
 import CardDashboard from '../components/CardDashboard'
+import Test from '../pages/Test'
+import NewAction from '../pages/NewAction'
+
 
 export default function Avraham() {
    const context = useContext(DataContext)
@@ -13,7 +16,9 @@ export default function Avraham() {
       <>
          {/* <Login/> */}
          {/* <Calendar/> */}
-         <CardDashboard/>
+         {/* <CardDashboard/> */}
+         {/* <NewAction/> */}
+         <Test/>
       </>
    )
 }
