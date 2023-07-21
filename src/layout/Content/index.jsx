@@ -3,7 +3,7 @@ import styles from './style.module.css'
 import { Route, Routes, useParams } from 'react-router-dom';
 // pages
 import Action from '../../pages/Action';
-import NewAction from '../../pages/NewAction';
+import NewAction from '../../pages/NewAction/index';
 import Files from '../../pages/Files';
 import Schedule from '../../pages/Schedule';
 import Tasks from '../../pages/Tasks';

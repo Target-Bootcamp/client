@@ -6,12 +6,12 @@ import { useState } from 'react'
 // creator: elad mizrchi
 
 export default function InputText({ style = {}, type , name, placeholder,
-    defaultValue, onChange, ...props }) {
+    defaultValue, onChange, ref }) {
 
         
     return (
             
-        <input className={styles.name} style={style} {...props}
+        <input className={styles.name} style={style} ref
             type={type} defaultValue={defaultValue} placeholder={placeholder}
             name={name} onChange={onChange} />
 
