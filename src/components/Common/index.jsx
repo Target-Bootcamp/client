@@ -35,9 +35,9 @@ function Common({  files,  setFiles, style = {}, ...props }) {
     // console.log(contex.currentAction);
   }
 
-  useEffect(()=>{
-apiCalls.post(`/acsions/${contex.currentAction._id}`,data)
-  },[files])
+//   useEffect(()=>{
+// apiCalls.post(`/acsions/${contex.currentAction._id}`,data)
+//   },[files])
   return (
     <div className={`center ${styles.name}`} style={style} {...props} onDrop={handleDrop} onDragOver={handleDragOver}>
 
