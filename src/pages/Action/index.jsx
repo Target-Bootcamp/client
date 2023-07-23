@@ -52,6 +52,7 @@ const Action = () => {
                         <div>
                         <SelectButtons  current={[data.actionType]}
                         isSingleChoice={true} classN={"w110"} options={typeArr}/> 
+
                         </div>
                     </div>
                     <div className={`center ${styles.inputs}`}>
