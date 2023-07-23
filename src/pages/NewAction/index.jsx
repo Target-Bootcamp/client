@@ -69,7 +69,7 @@ const NewAction = ({ }) => {
                     <div className={`${styles.actionType}`}>
                         <h4>סוג הפעילות</h4>
                         <div>
-                        <SelectButtons className={"w110"} options={typeArr}/>
+                        <SelectButtons className={"w166"} options={typeArr}/>
 
                         </div>
                     </div>

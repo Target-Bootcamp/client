@@ -33,10 +33,10 @@ const Action = () => {
             </div>
             <div className={`${styles.main}`} >
                 <div className={`${styles.mainRight}`}>
-                    <div className={`${styles.actionType}`}>
+                    <div className={`${styles.actionLocation}`}>
                         <h4>סוג הפעילות</h4>
                         <div>
-                        <   SelectButtons  classN={"w94"} options={typeArr}/>
+                        <SelectButtons  classN={"w110"} options={typeArr}/>
 
                         </div>
                     </div>
