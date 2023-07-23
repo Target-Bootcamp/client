@@ -6,14 +6,15 @@
 .rightDiv{
     width: 60%;
     height: 100%;
-    background-color: aqua;
+    /* background-color: aqua; */
     
 }
 .leftDiv{
     border-radius: 20px;
     height: 100%;
     width: 35%;
-    background-color: red;
+    background-color: var(--silver);
+    overflow: auto;
 }
 .calendar{
     width: 100%;
