@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import generateHours from "../../functions/generateHours";
 import styles from "./style.module.css";
 
-export default function InputHours() {
+export default function InputHours({defaultValueStart, defaultValueEnd}) {
   const [start, setstart] = useState();
   const [finish, setfinish] = useState();
   let hours = generateHours();
@@ -33,6 +33,7 @@ export default function InputHours() {
       <div className={`${styles.container}`}>
         <label> שעת התחלה</label>
         <select
+          defaultValue={defaultValueStart}
           onChange={(e) => ChangeNumber(e)}
           name="hours1"
         >
@@ -43,7 +44,8 @@ export default function InputHours() {
       </div>
       <div className={`${styles.container}`}>
         <label>שעת סיום</label>
-        <select
+        <select 
+          defaultValue={defaultValueEnd}
           onChange={(e) => HoursLimit(e)}
           name="hours1"
         >

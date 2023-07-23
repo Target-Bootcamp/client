@@ -22,8 +22,8 @@ const Content = ({ style = {} }) => {
     <div className={`${styles.content}  ${activety ? styles.contentActive : styles.contentNoActive}`} style={style}>
       <MainTest />
       <Routes>
-        <Route path='/' element={<Dashboard />} />
         {/* <Route path='/' element={<NewAction />} /> */}
+        <Route path='/' element={<Dashboard />} />
         <Route path='/action' element={<NewAction />} />
         <Route path='/action/:actionId' element={<Action />} />
         <Route path='/action/:actionId/files' element={<Files />} />

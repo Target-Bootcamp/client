@@ -11,51 +11,47 @@ import apiCalls from "../../functions/apiCalls";
 import { useParams } from "react-router-dom";
 
 const Action = () => {
-  const parms = useParams()
-  const context = useContext(DataContext);
-  const [action, setAction] = useState({});
-  useEffect(()=>{
-    apiCalls.get(`/actions/${parms.actionId}`)
-    .then(v =>setAction(v))
-    .catch(err=>console.log(err))
-  },[])
-  // const [activety, setActivety] = useState(action);
-  const statusArr = [{ value: "טרם בוצעה", text: "טרם בוצעה" }, { value: "נשלחה", text: "נשלחה" }, { value: "נחתמה", text: "נחתמה" }]
-  const typeArr = [{ value: "סדנא", text: "סדנא" }, { value: "קורס", text: "קורס" }, { value: "מכינה", text: "מכינה" }]
-  const locationArr = [{ value: "workshop", text: "בגוף המזמין" }, { value: "externally", text: "כיתה חיצונית" }]
-  const daysArr = [{ text: 'יום א', value: 1 }, { text: 'יום ב', value: 2 }, { text: 'יום ג', value: 3 }, { text: 'יום ד', value: 4 }, { text: 'יום ה', value: 5 }, { text: 'יום ו', value: 6 }]
-  return (
+    const context = useContext(DataContext);
+    const action = context.currentAction
+    const [activety, setActivety] = useState(action)
+    const typeArr = [{ value: "סדנא", text: "סדנא" }, { value: "קורס", text: "קורס" }, { value: "מכינה", text: "מכינה" }]
+    const locationArr = [{ value: 1, text: "בגוף המזמין" }, { value: 2, text: "כיתה חיצונית" }]
+    const daysArr = [{ text: 'יום א', value: 1 }, { text: 'יום ב', value: 2 }, { text: 'יום ג', value: 3 }, { text: 'יום ד', value: 4 }, { text: 'יום ה', value: 5 }, { text: 'יום ו', value: 6 }]
+    const statusArr = [{ value: "טרם בוצעה", text: "טרם בוצעה" }, { value: "נשלחה", text: "נשלחה" }, { value: "נחתמה", text: "נחתמה" }]
+    // console.log(action?action:"")
+    return (
     <>
         <CurrentAction/>
+        {/* {console.log(action?action:"")} */}
         <div className={`center scroller ${styles.newAction}`} >
             <div className={`center ${styles.header}`}>
-                <h3>פעילות חדשה</h3>
-                <InputText />
+                <h3>{"פעילות נוכית"}</h3>
+                {/* {actionaction.input} */}
             </div>
             <div className={`${styles.main}`} >
                 <div className={`${styles.mainRight}`}>
-                    <div className={`${styles.actionType}`}>
+                    <div className={`${styles.actionLocation}`}>
                         <h4>סוג הפעילות</h4>
                         <div>
-                        <   SelectButtons isSingleChoice={true} classN={"w94"} options={typeArr}/>
-
+                        <SelectButtons current={action?[action.currentActionType]:[]}
+                         isSingleChoice={true} classN={"w110"} options={typeArr}/>
                         </div>
                     </div>
                     <div className={`center ${styles.inputs}`}>
-                        <Search placeholder={"גוף מזמין..."} data={"fundingSource"} />
-                        <Search placeholder={"גוף מממן..."} data={"orderSource"} />
+                        {/* <Search defaultVal={action?action.fundingSource:""} placeholder={"גוף מממן..."} action={"fundingSource"} /> */}
+                        {/* <Search defaultVal={action?action.orderSource:""} placeholder={"גוף מזמין..."} action={"orderSource"} /> */}
                     </div>
                     <div className={`${styles.actionLocation}`}>
                         <h4>מיקום הפעילות</h4>
                         <div>
-                            <SelectButtons isSingleChoice={true} classN={"w166"} options={locationArr}/>
+                            <SelectButtons current={action?[action.locationType]:[]} isSingleChoice={true} classN={"w166"} options={locationArr}/>
 
                         </div>
                     </div>
                     <div className={`${styles.days}`}>
                         <h4>ימי לימוד</h4>
                         <div>
-                            <SelectButtons classN={"w55"} options={daysArr}/>
+                            <SelectButtons current={action?action.days:[]} isSingleChoice={false} classN={"w55"} options={daysArr}/>
                         </div>
 
                     </div>
@@ -64,18 +60,21 @@ const Action = () => {
                 <div className={`${styles.mainLeft}`}>
                     <div className={`center ${styles.inputs}`}>
                         <h4>שעות לימוד</h4>
-                        <InputHours/>
+                        {/* <InputHours defaultValueStart={action?action.ouerStart:""} defaultValueEnd={action?action.ouerEnd:""}/> */}
                     </div>
                     <div className={`${styles.inputs}`}>
                         <h4>תאריכים</h4>
-                        <InputDate />
+                        {/* <InputDate /*startDate={action.dateStart} endDate={action.dateEnd}*/ /> */}
                     </div>
                     <div className={`${styles.actionLocation}`}>
                         <h4>סטטוס הזמנה</h4>
                         <div>
-                            <SelectButtons isSingleChoice={true} classN={"w110"} options={statusArr}/>
+                            <SelectButtons current={action?[action.currentActionStatus]:[]} isSingleChoice={true} classN={"w110"} options={statusArr}/>
 
                         </div>
+                    </div>
+                    <div className={`center ${styles.sendBtu}`}>
+                        <button className='w154'>{action?.bottunInner?action.bottunInner:"שמור"}</button>
                     </div>
                 </div>
             </div>

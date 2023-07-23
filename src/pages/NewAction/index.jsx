@@ -63,7 +63,7 @@ const NewAction = () => {
         <div className={`center scroller ${styles.newAction}`} >
             <div className={`center ${styles.header}`}>
                 <h3>פעילות חדשה</h3>
-                <InputText/>
+                <InputText />
             </div>
             <div className={`${styles.main}`} >
                 <div className={`${styles.mainRight}`}>
