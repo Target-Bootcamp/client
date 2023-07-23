@@ -11,7 +11,7 @@ const Dashboard = () => {
     return (
         <div className={`center ${styles.hiro}`}>
             <div className={styles.rightDiv}>
-                dsf
+                
             </div>
             <div className={styles.leftDiv}>
                 <div className={`${styles.calendar}`}>

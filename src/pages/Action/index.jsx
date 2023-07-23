@@ -31,6 +31,9 @@ const Action = () => {
     const changeData = (key,val)=>{
         setData(prev=>{return {...prev,[key]:val}})
     }
+    const handleChange = ()=>{
+
+    }
     data&&console.log(data.actionType);
 
      return (
@@ -94,7 +97,7 @@ const Action = () => {
                         </div>
                     </div>
                     <div className={`center ${styles.sendBtu}`}>
-                        <button className='w154'>{data?.bottunInner?data.bottunInner:"שמור"}</button>
+                        <button onClick={handleChange} className='w154'>{data?.bottunInner?data.bottunInner:"שמור"}</button>
                     </div>
                 </div>
             </div>
