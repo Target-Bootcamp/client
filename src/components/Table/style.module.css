@@ -12,7 +12,17 @@ td, th {
   /* border: 2px solid #dddddd; */
   text-align: center;
   padding: 4px;
-  min-width: 80px;
+  min-width: 60px;
+}
+td > button{
+  padding: 5px;
+  border: none;
+  background: inherit;
+  border-radius: 50%;
+  cursor: pointer;
+}
+td > button:hover{
+  background-color: var(--primary);
 }
 .button{
 background-color: black;
@@ -36,4 +46,9 @@ border-radius: 50%;
     width: 40px;
     height: 30px;
     border-radius: 45%;
+    align-self: self-start;
   }
+  .iconAddStudent{
+    font-size: 2.9em;
+  }
+  
