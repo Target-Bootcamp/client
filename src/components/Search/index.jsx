@@ -6,10 +6,10 @@ import styles from './style.module.css'
 
 
 
-function Search({ placeholder, data ,width}) {
+function Search({defaultVal, placeholder, data ,width}) {
 
     const [filterData, setFilterData] = useState([])
-    const [input, setInput] = useState("")
+    const [input, setInput] = useState(defaultVal)
     const allData = useContext(DataContext).settings[data]
 
     const onChange = event => {
@@ -26,7 +26,7 @@ function Search({ placeholder, data ,width}) {
     return (
         <div className={styles.container}>
             <div style={{width}} className={styles.Search}>
-                <input type="text" value={input} placeholder={placeholder} onChange={onChange} />
+                <input defaultValue={"dsfd"} type="text" value={input} placeholder={placeholder} onChange={onChange} />
             </div>
             {filterData.length > 0 &&
                 <div className={styles.Btn}>

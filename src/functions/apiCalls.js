@@ -15,7 +15,7 @@ async function apicalls(method, url, data) {
         return result.data
 
     } catch (error) {
-        console.log(error);
+        // console.log(error);
         throw error
     }
 }

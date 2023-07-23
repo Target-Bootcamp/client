@@ -7,6 +7,7 @@ import apiCalls from "../../functions/apiCalls";
 const CurrentAction = () => {
   const param = useParams();
   const context = useContext(DataContext);
+  // console.log(param.actionId);
   useEffect(() => {
     if (
       !context.currentAction ||
@@ -14,10 +15,21 @@ const CurrentAction = () => {
     ) {
       apiCalls
         .get("/actions/" + param.actionId)
-        .then((res) => context.setCurrentAction(res));
+        .then((res) =>{
+          context.setCurrentAction(res)
+          console.log(res);
+        })
+        // .catch((err) =>console.log(err))
+      // coll()
+      }
+    }, []);
+    const coll = async()=>{
+      const a = await apiCalls.get("/actions/" + param.actionId)
+      context.setCurrentAction(a)
+      // console.log();
     }
-  }, []);
-
+    
+    // console.log(context.currentAction);
 
   return <></>;
 };
