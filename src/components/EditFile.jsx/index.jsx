@@ -17,7 +17,7 @@ function EditFile({ obj, style = {}, ...props }) {
             <form onSubmit={(e) => {editFileName(e,obj) }}>
                 <div>
                     <InputText type={'text'} defaultValue={obj.fileName} name={'fileName'}/>
-                    <input type='text' defaultValue={obj.fileName} name='fileName'></input>
+                    {/* <input type='text' defaultValue={obj.fileName} name='fileName'></input> */}
                     {/* <button type='submit'>עדכן</button> */}
                     <Button type={"submit"} butoonName={"עדכן"} className={'w55'}/>
                 </div>

@@ -12,32 +12,29 @@ import CurrentAction from "../../components/CurrentAction";
 const Files = () => {
     const params = useParams()
     const data = useContext(DataContext)
-    const [myActions, setMyActions] = useState([])
     const [files, setFiles] = useState([])
 
     useEffect(() => {
-        apiCalls.get(`/actions/${params.id}/files`)
-        .then((res)=>setFiles(res))
-    .catch((error) => console.log(error))
+        apiCalls.get(`/actions/${params.actionId}/files`)
+            .then((res) => setFiles(res))
+            .catch((error) => console.log(error))
     }
         , [])
-    // myActions.length && console.log(myActions);
+    // console.log(params);
     files.length && console.log(files);
-
     const handleAddition = () => data.setPopUp(<Common files={files} setFiles={setFiles} />)
     return (
         <>
-        <CurrentAction />
-        <div>
-            <PageHeader pageName={"הוספת קבצים"} actionType={myActions.actionType} />
-            <div className={styles.files}>
-                <Table data={myActions.files}
-                    arr={["fileName", "name"]}
-                    editing={(obj) => data.setPopUp(<EditFile obj={obj} />)}
-                    add={handleAddition} />
-                {/* <Common stet={files} setStet={setFiles} /> */}
+            <CurrentAction />
+            <div>
+                <PageHeader pageName={"הוספת קבצים"} actionType={data.currentAction?.actionType} />
+                <div className={styles.files}>
+                    <Table data={files}
+                        arr={["fileName", "name","createdDate","lastModifiedDate"]}
+                        editing={(obj) => data.setPopUp(<EditFile obj={obj} />)}
+                        add={handleAddition} />
+                </div>
             </div>
-        </div>
         </>
     );
 }
