@@ -48,15 +48,6 @@
 
 }
 
-.done {
-    text-decoration: line-through
-}
-
-.notDone {
-    text-decoration: none
-}
-
-
 .addTaskBtnArea {
     display: flex;
     width: 100%;
