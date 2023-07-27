@@ -1,0 +1,35 @@
+.notChecked {
+    display: flex;
+    gap: 5px;
+}
+
+.checked {
+    display: flex;
+    gap: 5px;
+    text-decoration: line-through;
+}
+
+.circularCheckbox {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.circularCheckbox:checked {
+    background-color: rgba(0, 0, 0, 0.242);
+}
+
+.hideDate {
+    display: none;
+}
+
+.showDate:hover+.hideDate {
+    display: block;
+}

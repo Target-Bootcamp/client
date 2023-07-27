@@ -3,7 +3,7 @@ import styles from './style.module.css'
 import { Route, Routes, useParams } from 'react-router-dom';
 // pages
 import Action from '../../pages/Action';
-import NewAction from '../../pages/NewAction';
+import NewAction from '../../pages/NewAction/index';
 import Files from '../../pages/Files';
 import Schedule from '../../pages/Schedule';
 import Tasks from '../../pages/Tasks';
@@ -15,29 +15,15 @@ const Content = ({ style = {} }) => {
   const param = useParams()
   const context = useContext(DataContext);
   const activety = context.currentAction;
-  const setActivety = context.setCurrentAction;  
-  let url = window.location.href;
-
-  // useEffect(()=>{
-  //   console.log(param);
-  //     if (param.actionId){
-  //       console.log(param.actionId);
-  //     }
-  // },[])
-  // useEffect(()=>{
-  //     if (param.actionId){
-  //       console.log(param.actionId);
-  //     }
-  // },[url])
-
+  const setActivety = context.setCurrentAction;
 
   return (
 
     <div className={`${styles.content}  ${activety ? styles.contentActive : styles.contentNoActive}`} style={style}>
-      {/* <MainTest /> */}
+      <MainTest />
       <Routes>
-        {/* <Route path='/' element={<Dashboard />} /> */}
-        <Route path='/' element={<NewAction />} />
+        {/* <Route path='/' element={<NewAction />} /> */}
+        <Route path='/' element={<Dashboard />} />
         <Route path='/action' element={<NewAction />} />
         <Route path='/action/:actionId' element={<Action />} />
         <Route path='/action/:actionId/files' element={<Files />} />
