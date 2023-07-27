@@ -16,6 +16,7 @@ function EditFile({ obj, style = {}, ...props }) {
         data.setPopUp(null)
         apiCalls.put(`/actions/${data.currentAction._id}/files/${obj._id}`,newFileName)
         .then((res)=>props.setFiles(res))
+        .catch((error)=>console.log(error))
         
         // console.log(props);
     }
