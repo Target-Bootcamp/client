@@ -17,7 +17,7 @@ export default function Table({ data = [], arr, deletion, editing, TaskMarking, 
    function tempFunck(objeckt) {
       return <tr> {obj.map(key => {
          return <>
-            {key === "isDone" ? <td>
+            {key === "isDone" ? <td >
                {
 
                   <button className={objeckt[key] ? styles.button : styles.checknun}

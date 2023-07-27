@@ -21,8 +21,12 @@ const Files = () => {
     }
         , [])
     // console.log(params);
-    files.length && console.log(files);
     const handleAddition = () => data.setPopUp(<Common files={files} setFiles={setFiles} />)
+    const handleDeletion=(e)=>{
+        setFiles(prev=>prev.filter(v=>v._id !== e._id))
+    }
+    
+    // files.length && console.log(files);
     return (
         <>
             <CurrentAction />
@@ -31,8 +35,9 @@ const Files = () => {
                 <div className={styles.files}>
                     <Table data={files}
                         arr={["fileName", "name","createdDate","lastModifiedDate"]}
-                        editing={(obj) => data.setPopUp(<EditFile obj={obj} />)}
-                        add={handleAddition} />
+                        editing={(obj) => data.setPopUp(<EditFile obj={obj} setFiles={setFiles}/>)}
+                        add={handleAddition} 
+                        deletion={handleDeletion}/>
                 </div>
             </div>
         </>
